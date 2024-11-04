@@ -31,7 +31,7 @@ const WhyChooseUs = ({  features }) => {
 
     return (
         <section className="bg-[#192738] w-full  my-20 flex py-20 items-center flex-col lg:px-0 px-2">
-            <h1 className="text-primary text-3xl m-0 md:text-4xl lg:text-5xl font-semibold mb-6 text-center ">
+            <h1 className="heading mb-6 text-center ">
                 Why Choose Us
             </h1>
 

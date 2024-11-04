@@ -31,7 +31,7 @@ const Introduction = () => {
                 </div>
             </div>
 
-            <h1 className="heading text-center text-[35px] m-0 lg:text-[45px]">
+            <h1 className="heading text-center">
                 Saaranj Ventures
             </h1>
             <p className="text-white text-center max-w-[750px] mt-5 lg:mx-auto mx-12 text-lg">

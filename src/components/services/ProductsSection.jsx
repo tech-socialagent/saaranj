@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const ProductCard = ({ image, heading, description }) => (
     <div className="flex flex-col items-center">
-        <div className="h-[300px] sm:h-[364px] border-b-4 border-primary w-[260px] sm:w-[300px] lg:w-[290px] bg-[#192738]">
+        <div className="h-[280px] sm:h-[320px] md:h-[364px] border-b-4 border-primary w-[240px] sm:w-[280px] md:w-[300px] lg:w-[290px] bg-[#192738]">
             <div className="h-2/3 w-full relative overflow-hidden">
                 <Image
                     src={image}
@@ -17,11 +17,11 @@ const ProductCard = ({ image, heading, description }) => (
                     priority
                 />
             </div>
-            <div className="flex flex-col justify-center px-4 sm:px-8 mt-4 items-center">
-                <p className="text-left font-semibold text-lg sm:text-xl text-white">
+            <div className="flex flex-col justify-center px-3 sm:px-6 md:px-8 mt-3 md:mt-4 items-center">
+                <p className="text-left font-semibold text-base sm:text-lg md:text-xl text-white">
                     {heading}
                 </p>
-                <p className="text-base sm:text-lg my-1 font-thin text-center text-white">
+                <p className="text-sm sm:text-base md:text-lg my-1 font-thin text-center text-white line-clamp-2">
                     {description}
                 </p>
             </div>
@@ -29,20 +29,21 @@ const ProductCard = ({ image, heading, description }) => (
     </div>
 );
 
-const ProductsSection = ({ PRODUCTS }) => {
+const ProductsSection = ({ title, desc, PRODUCTS }) => {
     const scrollContainerRef = useRef(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
     const scroll = (direction) => {
         const container = scrollContainerRef.current;
-        const scrollAmount = window.innerWidth < 640 ? 260 : 300;
-        
+        const scrollAmount = window.innerWidth < 640 ? 240 : 
+                           window.innerWidth < 768 ? 280 : 300;
+
         if (container) {
-            const newScrollPosition = direction === 'left' 
-                ? container.scrollLeft - scrollAmount 
+            const newScrollPosition = direction === 'left'
+                ? container.scrollLeft - scrollAmount
                 : container.scrollLeft + scrollAmount;
-            
+
             container.scrollTo({
                 left: newScrollPosition,
                 behavior: 'smooth'
@@ -66,59 +67,63 @@ const ProductsSection = ({ PRODUCTS }) => {
     };
 
     return (
-        <section className="mt-10 sm:mt-16 lg:mt-[120px] mx-2 sm:mx-4 lg:mx-12">
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-4 justify-between items-start overflow-hidden px-2 sm:px-4 lg:px-8">
-                {/* Text Content */}
-                <div className="w-full lg:w-2/4 lg:sticky lg:top-24 self-start mb-6 lg:mb-0">
-                    <h1 className="text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 text-left">
-                        Products of Aggregates & Sand
-                    </h1>
-                    <p className="text-white text-base sm:text-lg text-left mt-2 sm:mt-3">
-                        Discover a range of tailored concrete solutions designed to meet
-                        every project's unique requirements.
-                    </p>
-                </div>
+        <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-12">
+            <div className="max-w-[1400px] mx-auto">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">
+                    {/* Text Content */}
+                    <div className="w-full lg:w-1/3 lg:sticky lg:top-24">
+                        <h1 className="heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4 md:mb-6 text-left">
+                            {title}
+                        </h1>
+                        <p className="text-white text-sm sm:text-base md:text-lg text-left">
+                            {desc}
+                        </p>
+                    </div>
 
-                {/* Products Container with Navigation */}
-                <div className="w-full lg:w-3/4">
-                    {/* Container for Products and Navigation */}
-                    <div className="relative">
-                        {/* Navigation Buttons - Shown on all screens */}
-                        <div className="flex justify-between absolute w-full top-1/2 -translate-y-1/2 pointer-events-none z-10">
-                            <button 
-                                onClick={() => scroll('left')}
-                                className={`pointer-events-auto transform -translate-x-4 bg-primary/90 hover:bg-primary text-white p-2 rounded-full shadow-lg transition-all ${!showLeftArrow && 'opacity-0'}`}
-                                aria-label="Previous"
-                                disabled={!showLeftArrow}
-                            >
-                                <FaChevronLeft size={20} />
-                            </button>
-                            <button 
-                                onClick={() => scroll('right')}
-                                className={`pointer-events-auto transform translate-x-4 bg-primary/90 hover:bg-primary text-white p-2 rounded-full shadow-lg transition-all ${!showRightArrow && 'opacity-0'}`}
-                                aria-label="Next"
-                                disabled={!showRightArrow}
-                            >
-                                <FaChevronRight size={20} />
-                            </button>
-                        </div>
+                    {/* Products Container */}
+                    <div className="w-full lg:w-2/3">
+                        <div className="relative">
+                            {/* Navigation Buttons */}
+                            <div className="flex justify-between absolute w-full top-1/2 -translate-y-1/2 pointer-events-none z-10 px-2 sm:px-4">
+                                <button
+                                    onClick={() => scroll('left')}
+                                    className={`pointer-events-auto transform -translate-x-2 sm:-translate-x-4 
+                                        bg-primary/90 hover:bg-primary text-white 
+                                        p-1.5 sm:p-2 rounded-full shadow-lg transition-all
+                                        ${!showLeftArrow && 'opacity-0 pointer-events-none'}`}
+                                    aria-label="Previous"
+                                >
+                                    <FaChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                                </button>
+                                <button
+                                    onClick={() => scroll('right')}
+                                    className={`pointer-events-auto transform translate-x-2 sm:translate-x-4 
+                                        bg-primary/90 hover:bg-primary text-white 
+                                        p-1.5 sm:p-2 rounded-full shadow-lg transition-all
+                                        ${!showRightArrow && 'opacity-0 pointer-events-none'}`}
+                                    aria-label="Next"
+                                >
+                                    <FaChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                                </button>
+                            </div>
 
-                        {/* Scrollable Container */}
-                        <div 
-                            ref={scrollContainerRef}
-                            onScroll={handleScroll}
-                            className="overflow-x-auto scroll-smooth py-2 sm:py-4 px-1 sm:px-2 -mx-2 sm:mx-0"
-                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                        >
-                            <div className="flex gap-4 sm:gap-6">
-                                {PRODUCTS.map((product, index) => (
-                                    <ProductCard
-                                        key={index}
-                                        image={product.image}
-                                        heading={product.heading}
-                                        description={product.description}
-                                    />
-                                ))}
+                            {/* Scrollable Container */}
+                            <div
+                                ref={scrollContainerRef}
+                                onScroll={handleScroll}
+                                className="overflow-x-auto scroll-smooth "
+                                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                            >
+                                <div className="flex gap-3 sm:gap-4 md:gap-6">
+                                    {PRODUCTS.map((product, index) => (
+                                        <ProductCard
+                                            key={index}
+                                            image={product.image}
+                                            heading={product.heading}
+                                            description={product.description}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>

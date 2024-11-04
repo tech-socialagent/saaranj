@@ -18,7 +18,7 @@ const about = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
+                    img="/assets/banners/aboutushero.webp"
                     title="About Us"
                 />
                 <ContentImg

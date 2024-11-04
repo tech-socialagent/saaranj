@@ -14,7 +14,7 @@ const VisionMission = () => {
               className="object-contain"
             />
           </div>
-          <h1 className="text-primary m-4 text-3xl md:text-4xl lg:text-5xl font-semibold ">Vision</h1>
+          <h1 className=" m-4 heading">Vision</h1>
           <p className="text-lg mt-5 text-center  text-white">
             Our vision at Saaranj Ventures is to be the leading construction company 
             known for excellence, innovation, and customer satisfaction, shaping 
@@ -32,7 +32,7 @@ const VisionMission = () => {
               className="object-contain"
             />
           </div>
-          <h1 className="text-primary text-3xl m-4 md:text-4xl lg:text-5xl font-semibold">Mission</h1>
+          <h1 className=" m-4 heading">Mission</h1>
           <p className="text-lg mt-5 text-center text-white ">
             Our mission at Saaranj Ventures is to deliver exceptional construction 
             solutions characterized by quality, innovation, and client satisfaction, 

@@ -37,7 +37,7 @@ const OneSolution = () => {
         <section className="bg-secondary py-12 lg:py-16 px-4 lg:px-12">
             <div className=" mx-auto">
                 <div>
-                    <h1 className="text-primary text-4xl lg:text-5xl font-semibold mb-12">
+                    <h1 className="heading">
                         One Stop Solution
                     </h1>
                     <p className="text-gray-300 max-w-[750px] mt-3 text-lg">

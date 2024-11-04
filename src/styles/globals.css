@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@font-face {
+  font-family: "Futura Medium BT";
+  src: url("/fonts/futura medium bt.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.heading {
+  @apply lg:text-[45px] text-[35px] lg:leading-[54px] text-primary font-futura;
+}
 
 :root {
   --primary-color: #DFAD73;
@@ -11,6 +24,7 @@ html,
 body {
   margin: 0;
   background: var(--secondary-color);
+  font-family: "Lato", sans-serif;
 }
 
 
@@ -27,6 +41,7 @@ body {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -36,12 +51,15 @@ body {
 
 /* Hide scrollbar but maintain functionality */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 /* Optional: Custom scrollbar styling */

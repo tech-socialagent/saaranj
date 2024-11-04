@@ -11,7 +11,7 @@ const PackageComparison = () => {
 
     return (
         <section className="px-4 md:px-6 lg:px-12 mt-5 lg:mt-[120px]">
-            <h1 className="mx-auto text-primary text-2xl md:text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12 text-center">Package Comparison</h1>
+            <h1 className="mx-auto heading mb-8 lg:mb-12 text-center">Package Comparison</h1>
             
             <div className="grid lg:grid-cols-2 lg:mt-10 place-content-center gap-8 lg:gap-12">
                 {/* Basic Package */}

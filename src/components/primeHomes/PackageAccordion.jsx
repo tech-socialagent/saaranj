@@ -61,7 +61,7 @@ const PackageAccordion = ({ package: pkg, isMobile }) => {
     return (
         <div className="space-y-4">
             {!isMobile && (
-                <div className="flex justify-between items-start lg:w-full lg:px-20 gap-36 lg:gap-3">
+                <div className="flex justify-between items-start lg:w-full  gap-36 lg:gap-3">
                     <div>
                         <h2 className="text-primary text-2xl lg:text-4xl">{pkg.heading}</h2>
                         <p className="text-lg lg:text-xl mt-1 text-white">{pkg.price}</p>

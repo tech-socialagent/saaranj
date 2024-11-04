@@ -6,8 +6,8 @@ import { CUSTOMER_REVIEWS } from '@/constants/reviews';
 
 const CustomerReviews = () => {
     return (
-        <section className="py-10 px-12 lg:pb-20">
-            <h1 className="heading text-[35px] lg:text-[45px] text-primary mb-10">
+        <section className="py-10 px-12 mb-[80px]">
+            <h1 className="heading  mb-10">
                 Customer Reviews
             </h1>
             

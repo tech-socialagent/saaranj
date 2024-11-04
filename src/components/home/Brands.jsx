@@ -7,7 +7,7 @@ import { BRAND_IMAGES } from '@/constants/images';
 const Brands = () => {
     return (
         <section className="mt-10 lg:mt-[120px]">
-            <h1 className="heading text-center text-primary text-3xl md:text-4xl lg:text-5xl font-semibold mb-[58px]">
+            <h1 className="heading text-center  mb-[58px]">
                 We Choose The Best Brands For You
             </h1>
             <CustomMarquee>

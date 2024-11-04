@@ -7,7 +7,7 @@ import { CLIENT_IMAGES } from '@/constants/images';
 const Clients = () => {
     return (
         <section className="mt-10 lg:mt-[120px] mb-20">
-            <h1 className="heading text-center text-primary text-3xl md:text-4xl lg:text-5xl font-semibold mb-[58px]">
+            <h1 className="heading text-center  mb-[58px]">
                 Our Clients
             </h1>
             <CustomMarquee>

@@ -22,7 +22,7 @@ const services = [
 const Services = () => {
   return (
     <section className="lg:mx-12 mx-4 mt-10 lg:mt-[120px]">
-      <h1 className="text-primary text-3xl m-0 md:text-4xl lg:text-5xl font-semibold  text-center">Services We Offer</h1>
+      <h1 className="heading text-center">Services We Offer</h1>
       <div className="flex lg:flex-row flex-wrap gap-4 lg:gap-8 lg:mt-[49px] mt-5 items-center justify-center">
         {services.map((service, index) => (
           <div key={index} className="text-center w-[285px]">

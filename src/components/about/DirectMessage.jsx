@@ -5,7 +5,7 @@ const DirectorMessage = () => {
     <section className="lg:px-12 px-4 lg:mt-[120px] my-[80px] mx-auto">
       <div className="flex lg:flex-row flex-col justify-between items-center gap-2">
         <div className="lg:w-1/2">
-          <h1 className="text-primary text-3xl m-0 md:text-4xl lg:text-5xl font-semibold ">Managing Director's Message</h1>
+          <h1 className="heading ">Managing Director's Message</h1>
           <p className="test__para text-white mt-5">
             Since our inception, we have been driven by a simple yet powerful 
             vision—to transform aspirations into tangible realities. Founded on a 
@@ -30,7 +30,7 @@ const DirectorMessage = () => {
             and integrity.
           </p>
           <div className="mt-4">
-            <h2 className="text-primary text-2xl font-medium">Mr. R</h2>
+            <h2 className="heading">Mr. R</h2>
             <p className="test__para text-xl text-white mt-1">Saaranj Ventures</p>
           </div>
         </div>

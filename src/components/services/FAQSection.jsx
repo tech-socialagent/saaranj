@@ -9,7 +9,7 @@ const AccordionItem = ({ trigger, content, isOpen, onToggle }) => (
             onClick={onToggle}
             className="w-full flex items-center justify-between p-4 text-left hover:bg-[#1E303F] transition-colors duration-300"
         >
-            <span className="text-primary sm:text-xl text-2xl font-medium pr-8">
+            <span className="text-primary lg:text-3xl sm:text-xl font-medium pr-8">
                 {trigger}
             </span>
             <FaChevronDown
@@ -38,7 +38,7 @@ const FAQSection = ({ items = [] }) => {
     return (
         <section className={`my-[90px]  lg:px-12 px-4 py-10 `}>
             <div className=''>
-                <h1 className="text-primary text-3xl sm:text-4xl lg:text-5xl font-semibold text-center lg:text-left mb-8">
+                <h1 className="heading text-center lg:text-left mb-8">
                     Frequently Asked Questions
                 </h1>
                 <div className="">

@@ -55,7 +55,7 @@ const LocationSection = ({ page }) => {
 
     return (
         <section className="lg:mx-12  mx-4 mt-10 lg:mt-[120px] px-4 sm:px-6 lg:px-8">
-            <h1 className="text-primary text-center text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 lg:mb-10">
+            <h1 className="heading mb-8 lg:mb-10">
                 Locations We Operate
             </h1>
 

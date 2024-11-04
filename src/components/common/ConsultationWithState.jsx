@@ -41,7 +41,7 @@ const ConsultationForm = ({ title }) => {
 
             {/* Right Form Section */}
             <div className="bg-[#192738] p-8 lg:p-16">
-                <h1 className="text-primary text-4xl lg:text-5xl font-semibold mb-12">
+                <h1 className="heading mb-12">
                     {title || "Get a free Consultation"}
                 </h1>
 

@@ -4,7 +4,7 @@ import CustomButton from '../ui/CustomButton';
 
 const GetQuote = () => {
     return (
-        <section className="relative lg:my-20 my-5">
+        <section className="relative  my-5 lg:my-[120px]">
             <div className=" mx-4 py-10 relative">
                 <Image
                     src="/assets/prime-homes/quote-bg.png"

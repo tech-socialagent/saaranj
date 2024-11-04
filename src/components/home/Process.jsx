@@ -45,7 +45,7 @@ const Process = () => {
     return (
         <section className="bg-[#031831] py-12 lg:py-16 px-4 lg:px-12">
             <div className="max-w-[800px] mx-auto">
-                <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-semibold text-center mb-12">
+                <h1 className="heading text-center mb-12">
                     Our Process, Your Benefit
                 </h1>
 

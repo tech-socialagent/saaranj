@@ -26,7 +26,7 @@ const STEPS = [
 const HowItWorks = () => {
     return (
         <section className="px-4 md:px-6 lg:px-12 mt-5 lg:mt-[120px]">
-            <h1 className="text-primary text-4xl lg:text-5xl font-semibold mb-12 text-center slide-down">
+            <h1 className="heading mb-8 text-center slide-down">
                 How It Works
             </h1>
             

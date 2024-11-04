@@ -27,7 +27,7 @@ const HeroSection = ({ img, title }) => {
                 {/* Content Container */}
                 <div className="absolute inset-0 container mx-auto">
                     <div className="relative h-full flex items-center px-4 sm:px-6 lg:px-12">
-                        <h1 className="text-white mt-[50px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight max-w-[80%] break-words">
+                        <h1 className="lg:text-[52px] text-[35px] lg:leading-[54px] text-white font-futura  max-w-[80%] break-words">
                             {title}
                         </h1>
                     </div>

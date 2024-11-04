@@ -56,6 +56,9 @@ const Page = () => {
                     ]}
                 />
                 <ProductsSection
+                    title="Products of Aggregates & Sand"
+                    desc="Discover a range of tailored concrete solutions designed to meet
+                        every project's unique requirements."
                     PRODUCTS={[
                         {
                             image: '/assets/services/sand.jpeg',

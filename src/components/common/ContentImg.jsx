@@ -3,16 +3,16 @@ import Image from "next/image";
 const ContentImg = ({ title, desc, img, box, reverse }) => {
     return (
         <section className="lg:px-12 px-4 lg:my-[120px] my-[60px] mx-auto ">
-            <div className={`flex lg:flex-row flex-col justify-between items-center lg:gap-2 gap-8 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
-                <div className="lg:w-3/5">
-                    <h1 className="text-primary text-3xl m-0 md:text-4xl lg:text-5xl font-semibold ">{title}</h1>
-                    <p className="test__para max-w-[693px] text-white mt-5">
+            <div className={`flex lg:flex-row flex-col justify-between items-center lg:gap-4 gap-8 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+                <div className="lg:w-3/5 w-full">
+                    <h1 className="heading">{title}</h1>
+                    <p className="text-lg max-w-[800px] text-white mt-5">
                         {desc}
                     </p>
                 </div>
 
                 <div className=" flex-1  flex justify-center items-center w-full">
-                    <div className="relative lg:w-[397px] lg:h-[311px] h-[229px] w-full  ">
+                    <div className="relative lg:min-w-4/5 lg:h-[450px] h-[229px] w-full">
                         <Image
                             src={img}
                             alt="About Saaranj Ventures"
