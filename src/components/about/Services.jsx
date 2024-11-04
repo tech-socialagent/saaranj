@@ -21,11 +21,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="lg:mx-12 mx-4 mt-10 lg:mt-[120px]">
-      <h1 className="heading text-center">Services We Offer</h1>
-      <div className="flex lg:flex-row flex-wrap gap-4 lg:gap-8 lg:mt-[49px] mt-5 items-center justify-center">
+    <section className="lg:mx-12 mx-4 lg:mt-[120px] mt-[80px] ">
+      <h1 className="heading text-left md:text-center">Services We Offer</h1>
+      <div className="flex lg:flex-row flex-wrap gap-4 lg:gap-8 lg:mt-[49px] mt-5 items-center md:justify-center">
         {services.map((service, index) => (
-          <div key={index} className="text-center w-[285px]">
+          <div key={index} className="text-center md:w-[285px] w-full">
             <div className="relative w-full h-[300px]">
               <Image
                 src={service.image}

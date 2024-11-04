@@ -31,7 +31,7 @@ const socialMediaLinks = [
 const quickLinks = [
     { path: "/", display: "Home" },
     { path: "/about", display: "About Us" },
-    { path: "/packages", display: "Saaranj Prime Homes" },
+    { path: "/prime-homes", display: "Saaranj Prime Homes" },
     { path: "/ready-mix-concrete", display: "Ready Mix Concrete" },
     { path: "/aggregates-sand", display: "Aggregates & Sand" },
     { path: "/solid-block", display: "Solid Block" },
@@ -53,7 +53,7 @@ const Footer = () => {
                 <div className="lg:grid flex items-center lg:items-start flex-col justify-center lg:grid-cols-5 lg:grid-rows-1 gap-x-10">
                     {/* Logo and Social Media */}
                     <div className="lg:col-span-2 col-span-3">
-                        <div className="w-[400px] h-[120px] lg:block flex items-center justify-center relative">
+                        <div className="w-[200px] md:w-[400px] h-[120px] lg:block flex items-center justify-center relative">
                             <Image 
                                 src="/assets/logo.png" 
                                 alt="Saaranj Logo" 
@@ -108,7 +108,7 @@ const Footer = () => {
                                 <li key={index}>
                                     <Link
                                         href={{
-                                            pathname: '/packages',
+                                            pathname: '/prime-homes',
                                             query: { tab: item.id }
                                         }}
                                         className="lg:text-[20px] duration-150 ease-in-out hover:text-primary"

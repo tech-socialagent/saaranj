@@ -12,7 +12,7 @@ const ContentImg = ({ title, desc, img, box, reverse }) => {
                 </div>
 
                 <div className=" flex-1  flex justify-center items-center w-full">
-                    <div className="relative lg:min-w-4/5 lg:h-[450px] h-[229px] w-full">
+                    <div className="relative lg:min-w-4/5 lg:h-[450px] h-[229px] w-full overflow-hidden">
                         <Image
                             src={img}
                             alt="About Saaranj Ventures"

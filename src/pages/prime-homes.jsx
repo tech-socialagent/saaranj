@@ -19,8 +19,8 @@ const Page = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
-                    title="About Us"
+                    img="/assets/banners/saaranjprimehomeshero.webp"
+                    title="Saaranj Prime Homes"
                 />
                 <PackageDetails />
                 <PackageComparison />

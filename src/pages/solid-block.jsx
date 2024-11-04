@@ -20,7 +20,7 @@ const Page = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
+                    img="/assets/banners/srjsolidblockhero.webp"
                     title="SRJ Solid Block"
                 />
                 <ContentImg
@@ -28,34 +28,34 @@ const Page = () => {
                     desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
                         <br />  <br />
                         Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/services/srjsolidblock.webp"
                 />
                 <WhyChooseUs
                     features={[
                         {
                             icon: '/assets/icons/growth.png',
-                            text: 'Fastest Growing\nIndustry Player'
+                            text: 'Fastest Growing \nConcrete Block Player'
                         },
                         {
-                            icon: '/assets/icons/sand.png',
-                            text: '1.50 Cr tons\nAggregates Supplied'
+                            icon: '/assets/icons/blocksicon.png',
+                            text: '1.5+ crores \nblocks supplied'
                         },
                         {
                             icon: '/assets/icons/team.png',
                             text: '250+\nStrong Team'
                         },
                         {
-                            icon: "/assets/icons/growth.png",
-                            text: '100+\nTippers',
+                            icon: "/assets/icons/vehicles.png",
+                            text: '50+Trucks',
                             isIcon: true
                         },
                         {
                             icon: '/assets/icons/tech.png',
-                            text: 'Tech-enabled\nLogistics Solution'
+                            text: 'Tech-enabled \nLogistics Solution'
                         }
                     ]}
                 />
-               <ProductsSection
+                {/* <ProductsSection
                     PRODUCTS={[
                         {
                             image: '/assets/services/sand.jpeg',
@@ -78,7 +78,7 @@ const Page = () => {
                             description: "Solid and lasting aggregates.",
                         },
                     ]}
-                />
+                /> */}
                 <LocationSection />
                 <FAQSection
                     items={SOLID_BLOCK_FAQS}

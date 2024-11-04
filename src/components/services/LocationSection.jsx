@@ -39,7 +39,7 @@ const LocationAccordion = ({ title, address, address2,page, isOpen, onToggle }) 
         >
             <div className="p-4 bg-primary">
                 <p className="font-futura text-base sm:text-xl text-[#031831]">
-                    {page === 'road-developers' ? address2 : address}
+                    {page === 'road-developers' ? address2 || address : address}
                 </p>
             </div>
         </div>
@@ -54,7 +54,7 @@ const LocationSection = ({ page }) => {
     };
 
     return (
-        <section className="lg:mx-12  mx-4 mt-10 lg:mt-[120px] px-4 sm:px-6 lg:px-8">
+        <section className="lg:mx-12  mt-10 lg:mt-[120px] px-4 sm:px-6 lg:px-8">
             <h1 className="heading mb-8 lg:mb-10">
                 Locations We Operate
             </h1>

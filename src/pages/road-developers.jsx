@@ -20,7 +20,7 @@ const Page = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
+                    img="/assets/banners/roaddevelopershero.webp"
                     title="Road Developers"
                 />
                 <ContentImg
@@ -28,54 +28,48 @@ const Page = () => {
                     desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
                         <br />  <br />
                         Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/services/roaddevelopers/roaddevelopers.webp"
                 />
                 <WhyChooseUs
                     features={[
                         {
                             icon: '/assets/icons/growth.png',
-                            text: 'Fastest Growing\nIndustry Player'
+                            text: 'Renowned \npaving brand'
                         },
                         {
-                            icon: '/assets/icons/sand.png',
-                            text: '1.50 Cr tons\nAggregates Supplied'
+                            icon: '/assets/icons/roadicon.png',
+                            text: '1000+ Kms \nRoads Built'
                         },
                         {
                             icon: '/assets/icons/team.png',
                             text: '250+\nStrong Team'
                         },
                         {
-                            icon: "/assets/icons/growth.png",
-                            text: '100+\nTippers',
+                            icon: "/assets/icons/paving.png",
+                            text: '100+ Strong \nPaving Fleet',
                             isIcon: true
                         },
                         {
                             icon: '/assets/icons/tech.png',
-                            text: 'Tech-enabled\nLogistics Solution'
+                            text: 'Advanced \nPaving Technology'
                         }
                     ]}
                 />
                 <ProductsSection
+                    title="Our maintenance services"
+                    desc="Road Maintenance Keeping roads safe and functional is vital."
                     PRODUCTS={[
                         {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
+                            image: '/assets/services/roaddevelopers/roadcrack.jfif',
+                            heading: "Resurfacing and patching",
                         },
                         {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
+                            image: '/assets/services/roaddevelopers/cracksealing.webp',
+                            heading: "Crack sealing",
                         },
                         {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
-                        },
-                        {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
+                            image: '/assets/services/roaddevelopers/regularinspectionsandrepairs.webp',
+                            heading: "Regular inspections and repairs",
                         },
                     ]}
                 />
@@ -84,7 +78,7 @@ const Page = () => {
                     desc={<>Design & Planning Our team offers comprehensive design and planning services, utilizing cutting-edge technology to create efficient road layouts and effective traffic management solutions.
                         <br /><br />
                         Consulting Services We provide expert consulting for road projects, assisting clients with feasibility studies, project management, and regulatory compliance.</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/services/roaddevelopers/roaddevelopers2.webp"
                     reverse={true}
                 />
                 <LocationSection page='road-developers' />

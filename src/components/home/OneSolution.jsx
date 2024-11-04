@@ -65,7 +65,7 @@ const OneSolution = () => {
                 </div>
 
                 {/* Mobile View */}
-                <div className="lg:hidden flex flex-col gap-6 mt-8">
+                <div className="lg:hidden flex flex-col gap-6 mt-8 ml-4 " style={{width: 'calc(100% - 2rem)'}}>
                     {testimonials.map((item, index) => (
                         <TestimonialCard key={index} {...item} />
                     ))}
@@ -77,24 +77,24 @@ const OneSolution = () => {
 
 const TestimonialCard = ({ icon, heading, description }) => (
     <div className="relative ">
-        <div className="lg:h-[155px] text-left lg:w-[90%] w-full border-2 pb-5 border-primary pl-20 lg:pr-2 shadow-xl pt-2">
-            <h1 className="lg:text-xl text-xl text-white font-semibold">
-                {heading}
-            </h1>
-            <p className="font-lato text-gray-300 mt-2 text-[13px] lg:text-[15px]">
-                {description}
-            </p>
-        </div>
-        <div className="w-20 h-20 rounded-full p-3 border-2 absolute -top-7 border-primary -left-6  bg-secondary flex items-center justify-center overflow-hidden">
-            <Image
-                src={icon}
-                alt={heading}
-                width={80}
-                height={80}
-                className="w-full h-full object-contain"
-            />
-        </div>
-    </div>
-);
+                <div className="lg:h-[155px] text-left lg:w-[90%] w-full border-2 pb-5 border-primary pl-20 lg:pr-2 shadow-xl pt-2">
+                    <h1 className="lg:text-xl text-xl text-white font-semibold">
+                        {heading}
+                    </h1>
+                    <p className="font-lato text-gray-300 mt-2 text-[13px] lg:text-[15px]">
+                        {description}
+                    </p>
+                </div>
+                <div className="w-20 h-20 rounded-full p-3 border-2 absolute -top-7 border-primary -left-6  bg-secondary flex items-center justify-center overflow-hidden">
+                    <Image
+                        src={icon}
+                        alt={heading}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                    />
+                </div>
+            </div>
+            );
 
-export default OneSolution;
+            export default OneSolution;

@@ -20,7 +20,7 @@ const Page = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
+                    img="/assets/banners/earthmovershero.webp"
                     title="Earth Movers"
                 />
                 <ContentImg
@@ -28,55 +28,66 @@ const Page = () => {
                     desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
                         <br />  <br />
                         Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/services/earth-movers/grading.webp"
                 />
                 <WhyChooseUs
                     features={[
                         {
                             icon: '/assets/icons/growth.png',
-                            text: 'Fastest Growing\nIndustry Player'
+                            text: 'fastest moving \nearth excavators'
                         },
                         {
-                            icon: '/assets/icons/sand.png',
-                            text: '1.50 Cr tons\nAggregates Supplied'
+                            icon: '/assets/icons/earth.png',
+                            text: '80+ Lakh m3 \nof Earth Excavated'
                         },
                         {
                             icon: '/assets/icons/team.png',
                             text: '250+\nStrong Team'
                         },
                         {
-                            icon: "/assets/icons/growth.png",
-                            text: '100+\nTippers',
-                            isIcon: true
+                            icon: "/assets/icons/vehicles.png",
+                            text: '100+ \nVehicles',
                         },
                         {
                             icon: '/assets/icons/tech.png',
-                            text: 'Tech-enabled\nLogistics Solution'
+                            text: 'Tech-enabled \nLogistics Solution'
                         }
                     ]}
                 />
                 <ProductsSection
+                    title="Our Earthmoving Services"
+                    desc="Efficient excavation, land clearing, and grading to prepare your site with precision and reliability."
                     PRODUCTS={[
                         {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
-                        },
-                        {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
-                        },
-                        {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
-                        },
-                        {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
-                        },
+                            image: "/assets/services/earth-movers/excavation.webp",
+                            heading: "Excavation",
+                            description:
+                              "Site preparation for residential, commercial, and industrial projects. Deep excavation for foundations, basements, and utilities.",
+                          },
+                          {
+                            image: "/assets/services/earth-movers/grading.webp",
+                            heading: "Grading",
+                            description:
+                              "Land leveling and contouring to ensure proper drainage and foundation support. Precision grading for roads, parking lots, and landscaping projects.",
+                          },
+                          {
+                            image: "/assets/services/earth-movers/landclearing.webp",
+                            heading: "Land Clearing",
+                            description:
+                              "Removal of trees, brush, and debris to prepare sites for construction. Environmentally responsible practices to minimize impact.",
+                          },
+                          {
+                            image: "/assets/services/earth-movers/trenching.webp",
+                            heading: "Trenching",
+                            description:
+                              "Installation of utility trenches for water, gas, and electrical lines. Safe and efficient trenching solutions for all project sizes.",
+                          },
+                          {
+                            image: "/assets/services/earth-movers/demolition.webp",
+                            heading: "Demolition",
+                            description:
+                              "Controlled demolition of structures to clear sites for new development. Safe removal of materials with minimal disruption.",
+                          },
                     ]}
                 />
                 <LocationSection />

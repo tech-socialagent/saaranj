@@ -14,7 +14,7 @@ const Brands = () => {
                 {BRAND_IMAGES.map((brand, index) => (
                     <div
                         key={index}
-                        className={`mx-10 w-[251px] h-[143px] flex items-center justify-center
+                        className={`mx-4 md:mx-10 md:w-[251px] w-[180px] h-[100px] md:h-[143px] flex items-center justify-center
                             ${index === 6 ? "bg-[#FFC511]" : "bg-white"}
                         `}
                     >
@@ -23,7 +23,7 @@ const Brands = () => {
                             alt={brand.alt}
                             width={251}
                             height={143}
-                            className="w-full h-full object-contain p-4"
+                            className="w-full h-full object-contain py-4"
                         />
                     </div>
                 ))}

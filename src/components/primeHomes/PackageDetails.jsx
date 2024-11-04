@@ -24,7 +24,7 @@ const PackageDetails = () => {
     return (
         <section className="px-4 md:px-6 lg:px-12 mt-5 lg:mt-[90px]">
             {/* Heading */}
-            <h1 className="mx-auto heading max-w-[1000px] mb-8 lg:mb-12 text-center">
+            <h1 className="mx-auto heading leading-9 max-w-[1000px] mb-8 lg:mb-12 text-center">
                 Get detailed insights into the raw materials required for your home construction.
             </h1>
 

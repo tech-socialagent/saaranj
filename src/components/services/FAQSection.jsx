@@ -36,7 +36,7 @@ const FAQSection = ({ items = [] }) => {
     };
 
     return (
-        <section className={`my-[90px]  lg:px-12 px-4 py-10 `}>
+        <section className={`my-[90px]  lg:px-12 px-4 py-10 md:pt-10 pt-0`}>
             <div className=''>
                 <h1 className="heading text-center lg:text-left mb-8">
                     Frequently Asked Questions

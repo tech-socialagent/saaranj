@@ -20,7 +20,7 @@ const Page = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
+                    img="/assets/banners/srjconcretehero.webp"
                     title="SRJ Ready Mix Concrete"
                 />
                 <ContentImg
@@ -28,25 +28,26 @@ const Page = () => {
                     desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
                         <br />  <br />
                         Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/services/concrete/srjconcrete.webp"
                 />
                 <WhyChooseUs
+
                     features={[
                         {
                             icon: '/assets/icons/growth.png',
-                            text: 'Fastest Growing\nIndustry Player'
+                            text: 'Fastest Growing \nConcrete Player'
                         },
                         {
-                            icon: '/assets/icons/sand.png',
-                            text: '1.50 Cr tons\nAggregates Supplied'
+                            icon: '/assets/icons/concrete.png',
+                            text: '15+ Lakhs m3 of\n Concrete Supplied'
                         },
                         {
                             icon: '/assets/icons/team.png',
                             text: '250+\nStrong Team'
                         },
                         {
-                            icon: "/assets/icons/growth.png",
-                            text: '100+\nTippers',
+                            icon: "/assets/icons/mixers.png",
+                            text: '100+ \nTransit Mixers',
                             isIcon: true
                         },
                         {
@@ -56,29 +57,28 @@ const Page = () => {
                     ]}
                 />
                 <ProductsSection
-                    title="Products of Aggregates & Sand"
-                    desc="Discover a range of tailored concrete solutions designed to meet
-                        every project's unique requirements."
+                    title="Products of Ready Mix Concrete"
+                    desc="Discover a range of tailored concrete solutions designed to meet every project’s unique requirements."
                     PRODUCTS={[
                         {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
+                            image: "/assets/services/concrete/quickmix.webp",
+                            heading: "Quik Mix",
+                            description: "High early strength concrete.",
                         },
                         {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
+                            image: "/assets/services/concrete/fortimix.webp",
+                            heading: "Forti Mix",
+                            description: "Ultra high strength concrete.",
                         },
                         {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
+                            image: "/assets/services/concrete/fibremix.webp",
+                            heading: "Fibre Mix",
+                            description: "Fibre reinforced concrete.",
                         },
                         {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
+                            image: "/assets/services/concrete/floormix.webp",
+                            heading: "Floor Mix",
+                            description: "Screed Concrete",
                         },
                     ]}
                 />

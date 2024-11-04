@@ -4,7 +4,7 @@ import { IMAGES } from '@/constants/images';
 
 const Introduction = () => {
     return (
-        <section className="relative py-20 overflow-hidden bg-secondary text-primary">
+        <section className="relative py-20 pb-10 sm:pb-20 overflow-hidden bg-secondary text-primary">
             {/* First Image Container */}
             <div className="absolute lg:top-0 w-44 lg:w-full lg:h-full h-44 lg:right-1 -right-4 overflow-hidden">
                 <div className="relative w-full h-full">

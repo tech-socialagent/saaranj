@@ -6,8 +6,9 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const ProductCard = ({ image, heading, description }) => (
     <div className="flex flex-col items-center">
-        <div className="h-[280px] sm:h-[320px] md:h-[364px] border-b-4 border-primary w-[240px] sm:w-[280px] md:w-[300px] lg:w-[290px] bg-[#192738]">
-            <div className="h-2/3 w-full relative overflow-hidden">
+        <div className="flex flex-col h-full border-b-4 border-primary w-[240px] sm:w-[280px] md:w-[300px] lg:w-[290px] bg-[#192738]">
+            {/* Image Container - Fixed Height */}
+            <div className="h-[180px] sm:h-[200px] md:h-[220px] w-full relative overflow-hidden">
                 <Image
                     src={image}
                     alt={heading}
@@ -17,11 +18,12 @@ const ProductCard = ({ image, heading, description }) => (
                     priority
                 />
             </div>
-            <div className="flex flex-col justify-center px-3 sm:px-6 md:px-8 mt-3 md:mt-4 items-center">
-                <p className="text-left font-semibold text-base sm:text-lg md:text-xl text-white">
+            {/* Content Container - Flexible Height */}
+            <div className="flex flex-col flex-grow p-3 sm:p-4 md:p-6">
+                <h3 className="text-left font-semibold text-base sm:text-lg md:text-xl text-white mb-2">
                     {heading}
-                </p>
-                <p className="text-sm sm:text-base md:text-lg my-1 font-thin text-center text-white line-clamp-2">
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-white/90 font-light">
                     {description}
                 </p>
             </div>
@@ -67,7 +69,7 @@ const ProductsSection = ({ title, desc, PRODUCTS }) => {
     };
 
     return (
-        <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-12">
+        <section className="pb-10 md:pb-0 md:py-16 px-4 sm:px-6 lg:px-12">
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">
                     {/* Text Content */}

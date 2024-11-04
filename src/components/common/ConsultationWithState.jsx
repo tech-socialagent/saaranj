@@ -40,7 +40,7 @@ const ConsultationForm = ({ title }) => {
             </div>
 
             {/* Right Form Section */}
-            <div className="bg-[#192738] p-8 lg:p-16">
+            <div className="bg-[#192738] p-8 px-4 lg:p-16">
                 <h1 className="heading mb-12">
                     {title || "Get a free Consultation"}
                 </h1>

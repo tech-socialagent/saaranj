@@ -6,7 +6,7 @@ import { CUSTOMER_REVIEWS } from '@/constants/reviews';
 
 const CustomerReviews = () => {
     return (
-        <section className="py-10 px-12 mb-[80px]">
+        <section className="py-10 pt-0 sm:pt-10 px-4 lg:px-12 md:mb-[80px] mb-[40px]">
             <h1 className="heading  mb-10">
                 Customer Reviews
             </h1>
@@ -22,7 +22,7 @@ const CustomerReviews = () => {
 
 const ReviewCard = ({ name, role, rating, review }) => {
     return (
-        <div className="lg:h-[295px] lg:w-[399px] bg-[#192738] border-l-4 border-primary px-3 lg:px-10 py-2 lg:py-5 hover:shadow-xl transition-shadow duration-300">
+        <div className="lg:h-[295px] lg:w-[399px] bg-[#192738] border-l-4 border-primary  px-3 lg:px-10 py-2 lg:py-5 hover:shadow-xl transition-shadow duration-300">
             <div className="h-8">
                 <FaQuoteLeft className="text-primary text-2xl" />
             </div>

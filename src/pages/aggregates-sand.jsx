@@ -20,7 +20,7 @@ const Page = () => {
             </Head>
             <>
                 <HeroSection
-                    img="/assets/about/banner.png"
+                    img="/assets/banners/aggregates&sandhero.webp"
                     title="Aggregates and Sand"
                 />
                 <ContentImg
@@ -28,7 +28,7 @@ const Page = () => {
                     desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
                         <br />  <br />
                         Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/services/aggregates-sand-ss.webp"
                 />
                 <WhyChooseUs
                     features={[
@@ -45,7 +45,7 @@ const Page = () => {
                             text: '250+\nStrong Team'
                         },
                         {
-                            icon: "/assets/icons/growth.png",
+                            icon: "/assets/icons/vehicles.png",
                             text: '100+\nTippers',
                             isIcon: true
                         },
@@ -56,6 +56,8 @@ const Page = () => {
                     ]}
                 />
                 <ProductsSection
+                    title="Products of Aggregates & Sand"
+                    desc="Discover a range of tailored concrete solutions designed to meet every project’s unique requirements."
                     PRODUCTS={[
                         {
                             image: '/assets/services/sand.jpeg',
@@ -67,16 +69,7 @@ const Page = () => {
                             heading: "Coarse Aggregates",
                             description: "Solid and lasting aggregates.",
                         },
-                        {
-                            image: '/assets/services/sand.jpeg',
-                            heading: "Sand",
-                            description: "Premium manufacturing and plastering sand.",
-                        },
-                        {
-                            image: '/assets/services/coarse-aggregates.jpeg',
-                            heading: "Coarse Aggregates",
-                            description: "Solid and lasting aggregates.",
-                        },
+
                     ]}
                 />
                 <LocationSection />
