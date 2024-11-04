@@ -1,40 +1,36 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 
 const Hero = () => {
-
     return (
-        <div className="w-full h-max bg-red-700 overflow-hidden">
+        <div className="w-full">
             {/* Desktop view image */}
-            <Image
-                src="/assets/home/hero.png"
-                alt="Full width display desktop"
-                // fill
-                width={1000}
-                height={1000}
-                priority
-                className={`
-                    w-full
-            object-contain
-            transition-opacity duration-300
-          `} />
+            <div className="hidden lg:block md:block">
+                <Image
+                    src="/assets/home/hero.png"
+                    alt="Full width display desktop"
+                    width={1920}
+                    height={1080}
+                    priority
+                    className="w-full h-auto"
+                    sizes="100vw"
+                />
+            </div>
 
             {/* Mobile view image */}
-            <div className="block lg:hidden w-full h-full relative">
+            <div className="block lg:hidden md:hidden relative">
                 <Image
                     src="/assets/home/hero_mobile.png"
                     alt="Full width display mobile"
-                    fill
+                    width={768}
+                    height={1024}
                     priority
-                    className={`
-            object-cover
-            transition-opacity duration-300
-          `} />
+                    className="w-full h-auto"
+                    sizes="100vw"
+                />
             </div>
         </div>
-
     );
 };
 

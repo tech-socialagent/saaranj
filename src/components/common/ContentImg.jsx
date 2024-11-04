@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-const ContentImg = ({ title, desc, img, box }) => {
+const ContentImg = ({ title, desc, img, box, reverse }) => {
     return (
         <section className="lg:px-12 px-4 lg:my-[120px] my-[60px] mx-auto ">
-            <div className="flex lg:flex-row flex-col justify-between items-center lg:gap-2 gap-8 ">
+            <div className={`flex lg:flex-row flex-col justify-between items-center lg:gap-2 gap-8 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
                 <div className="lg:w-3/5">
                     <h1 className="text-primary text-3xl m-0 md:text-4xl lg:text-5xl font-semibold ">{title}</h1>
                     <p className="test__para max-w-[693px] text-white mt-5">

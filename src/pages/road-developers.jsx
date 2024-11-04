@@ -1,7 +1,11 @@
+import ConsultationForm from '@/components/common/ConsultationWithState'
 import ContentImg from '@/components/common/ContentImg'
 import HeroSection from '@/components/common/HeroSection'
 import WhyChooseUs from '@/components/common/WhyChooseUs'
+import FAQSection from '@/components/services/FAQSection'
+import LocationSection from '@/components/services/LocationSection'
 import ProductsSection from '@/components/services/ProductsSection'
+import { ROAD_DEVELOPERS_FAQS } from '@/constants/faqs'
 import Head from 'next/head'
 import React from 'react'
 
@@ -51,7 +55,43 @@ const Page = () => {
                         }
                     ]}
                 />
-                <ProductsSection />
+                <ProductsSection
+                    PRODUCTS={[
+                        {
+                            image: '/assets/services/sand.jpeg',
+                            heading: "Sand",
+                            description: "Premium manufacturing and plastering sand.",
+                        },
+                        {
+                            image: '/assets/services/coarse-aggregates.jpeg',
+                            heading: "Coarse Aggregates",
+                            description: "Solid and lasting aggregates.",
+                        },
+                        {
+                            image: '/assets/services/sand.jpeg',
+                            heading: "Sand",
+                            description: "Premium manufacturing and plastering sand.",
+                        },
+                        {
+                            image: '/assets/services/coarse-aggregates.jpeg',
+                            heading: "Coarse Aggregates",
+                            description: "Solid and lasting aggregates.",
+                        },
+                    ]}
+                />
+                <ContentImg
+                    title="Road Developers"
+                    desc={<>Design & Planning Our team offers comprehensive design and planning services, utilizing cutting-edge technology to create efficient road layouts and effective traffic management solutions.
+                        <br /><br />
+                        Consulting Services We provide expert consulting for road projects, assisting clients with feasibility studies, project management, and regulatory compliance.</>}
+                    img="/assets/about/who-we-are.png"
+                    reverse={true}
+                />
+                <LocationSection page='road-developers' />
+                <FAQSection
+                    items={ROAD_DEVELOPERS_FAQS}
+                />
+                <ConsultationForm />
             </>
         </>
     )

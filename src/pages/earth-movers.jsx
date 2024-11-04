@@ -1,7 +1,11 @@
+import ConsultationForm from '@/components/common/ConsultationWithState'
 import ContentImg from '@/components/common/ContentImg'
 import HeroSection from '@/components/common/HeroSection'
 import WhyChooseUs from '@/components/common/WhyChooseUs'
+import FAQSection from '@/components/services/FAQSection'
+import LocationSection from '@/components/services/LocationSection'
 import ProductsSection from '@/components/services/ProductsSection'
+import { EARTH_MOVERS_FAQS } from '@/constants/faqs'
 import Head from 'next/head'
 import React from 'react'
 
@@ -51,7 +55,35 @@ const Page = () => {
                         }
                     ]}
                 />
-                <ProductsSection />
+                <ProductsSection
+                    PRODUCTS={[
+                        {
+                            image: '/assets/services/sand.jpeg',
+                            heading: "Sand",
+                            description: "Premium manufacturing and plastering sand.",
+                        },
+                        {
+                            image: '/assets/services/coarse-aggregates.jpeg',
+                            heading: "Coarse Aggregates",
+                            description: "Solid and lasting aggregates.",
+                        },
+                        {
+                            image: '/assets/services/sand.jpeg',
+                            heading: "Sand",
+                            description: "Premium manufacturing and plastering sand.",
+                        },
+                        {
+                            image: '/assets/services/coarse-aggregates.jpeg',
+                            heading: "Coarse Aggregates",
+                            description: "Solid and lasting aggregates.",
+                        },
+                    ]}
+                />
+                <LocationSection />
+                <FAQSection
+                    items={EARTH_MOVERS_FAQS}
+                />
+                <ConsultationForm />
             </>
         </>
     )

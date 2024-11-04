@@ -12,7 +12,6 @@ const Page = () => {
                 <link rel="icon" href="/favicon.svg" />
             </Head>
             <>
-            <div className="h-[1px]"></div>
             <ConsultationForm  title="Contact Us"/>
             </>
         </>

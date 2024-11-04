@@ -45,7 +45,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="bg-secondary bg-opacity/95 font-futura backdrop-blur-sm fixed w-full h-[74px] flex items-center justify-center border-b-0 border-primary shadow-2xl z-50">
+        <header className="bg-secondary bg-opacity/95 font-futura backdrop-blur-sm sticky top-0 w-full h-[74px] flex items-center justify-center border-b-0 border-primary shadow-2xl z-50">
             <div className="mx-auto px-8 w-full flex justify-between items-center gap-x-4">
                 <Link href="/" className="relative w-[70px] h-[49px]">
                     <Image

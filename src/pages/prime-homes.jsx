@@ -6,6 +6,7 @@ import PackageComparison from '@/components/primeHomes/PackageComparison'
 import HowItWorks from '@/components/primeHomes/HowItWorks'
 import Brands from '@/components/home/Brands'
 import GetQuote from '@/components/primeHomes/GetQuote'
+import ConsultationForm from '@/components/common/ConsultationWithState'
 
 const Page = () => {
     return (
@@ -26,6 +27,7 @@ const Page = () => {
                 <HowItWorks />
                 <Brands />
                 <GetQuote />
+                <ConsultationForm />
             </>
         </>
     )

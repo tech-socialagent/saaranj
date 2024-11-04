@@ -28,7 +28,7 @@ const ConsultationForm = ({ title }) => {
     };
 
     return (
-        <section className="grid grid-cols-1 mt-[100px] lg:grid-cols-2">
+        <section className="grid grid-cols-1  lg:grid-cols-2">
             {/* Left Image Section */}
             <div className="hidden lg:block relative">
                 <Image
