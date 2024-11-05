@@ -3,21 +3,51 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
-const locations = [
-    {
-        id: 'location1',
-        title: 'Head Office',
-        address: '#699, 3rd Floor, 15th Cross, J.P Nagar 2nd Phase, Bangalore-560078',
-    },
-    {
-        id: 'location2',
-        title: 'Plant Address',
-        address: 'Survey No.39/4, Kodathi Village, Carmaralam Post, Varthur Hobli, Bengaluru east, Bengaluru-560035.',
-        address2: 'Sy.No.32/4 & 32/5,Bommanahalli village,Channarayapatna Hobli,Devanahalli Taluk - 562100.',
+const getLocations = (page) => {
+    if (page === 'aggregates-sand') {
+        return [
+            {
+                id: 'location1',
+                title: 'Head Office',
+                address: '#699, 3rd Floor, 15th Cross, J.P Nagar 2nd Phase, Bangalore-560078',
+            },
+            {
+                id: 'location2',
+                title: 'Plant Address',
+                units: [
+                    {
+                        title: 'Unit-1',
+                        address: 'Sy.No.1, Doripalli Village & Post, Shoolagiri Taluk, Krishnagiri District, Tamil Nadu-635109.'
+                    },
+                    {
+                        title: 'Unit-2',
+                        address: 'Sy.No.113/2, Meenandoddi Village, Shoolagiri Taluk, Krishnagiri district, Tamil Nadu-635109.'
+                    },
+                    {
+                        title: 'Unit-3',
+                        address: 'SY. NO. 781/1, BODICHIPALLI VILLAGE, IRUDALAM POST, DENKANIKOTTAI TALUK, KRISHNAGIRI DISTRICT, TAMILNADU-635113'
+                    }
+                ]
+            }
+        ];
     }
-];
+    // Default locations for other pages
+    return [
+        {
+            id: 'location1',
+            title: 'Head Office',
+            address: '#699, 3rd Floor, 15th Cross, J.P Nagar 2nd Phase, Bangalore-560078',
+        },
+        {
+            id: 'location2',
+            title: 'Plant Address',
+            address: 'Survey No.39/4, Kodathi Village, Carmaralam Post, Varthur Hobli, Bengaluru east, Bengaluru-560035.',
+            address2: 'Sy.No.32/4 & 32/5,Bommanahalli village,Channarayapatna Hobli,Devanahalli Taluk - 562100.',
+        }
+    ];
+};
 
-const LocationAccordion = ({ title, address, address2,page, isOpen, onToggle }) => (
+const LocationAccordion = ({ title, address, address2, units, page, isOpen, onToggle }) => (
     <div className="w-full">
         <button
             onClick={onToggle}
@@ -34,13 +64,24 @@ const LocationAccordion = ({ title, address, address2,page, isOpen, onToggle }) 
         </button>
         <div
             className={`transition-all duration-500 ease-in-out overflow-hidden
-                ${isOpen ? 'max-h-48' : 'max-h-0'}
+                ${isOpen ? (units ? 'max-h-96' : 'max-h-48') : 'max-h-0'}
             `}
         >
             <div className="p-4 bg-primary">
-                <p className="font-futura text-base sm:text-xl text-[#031831]">
-                    {page === 'road-developers' ? address2 || address : address}
-                </p>
+                {units ? (
+                    <div className="space-y-4">
+                        {units.map((unit, index) => (
+                            <div key={index} className="font-futura">
+                                <h3 className="text-lg font-semibold text-[#031831] mb-1">{unit.title}</h3>
+                                <p className="text-base sm:text-xl text-[#031831]">{unit.address}</p>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p className="font-futura text-base sm:text-xl text-[#031831]">
+                        {page === 'road-developers' ? address2 || address : address}
+                    </p>
+                )}
             </div>
         </div>
     </div>
@@ -48,13 +89,14 @@ const LocationAccordion = ({ title, address, address2,page, isOpen, onToggle }) 
 
 const LocationSection = ({ page }) => {
     const [activeAccordion, setActiveAccordion] = useState('location1');
+    const locations = getLocations(page);
 
     const toggleAccordion = (locationId) => {
         setActiveAccordion(activeAccordion === locationId ? null : locationId);
     };
 
     return (
-        <section className="lg:mx-12  mt-10 lg:mt-[120px] px-4 sm:px-6 lg:px-8">
+        <section className="lg:mx-12 mt-10 lg:mt-[120px] px-4 sm:px-6 lg:px-8">
             <h1 className="heading mb-8 lg:mb-10">
                 Locations We Operate
             </h1>
@@ -78,11 +120,12 @@ const LocationSection = ({ page }) => {
                 <div className="w-full lg:w-1/2 order-1 lg:order-2 space-y-4">
                     {locations.map((location) => (
                         <LocationAccordion
-                            page={page}
                             key={location.id}
                             title={location.title}
                             address={location.address}
                             address2={location.address2}
+                            units={location.units}
+                            page={page}
                             isOpen={activeAccordion === location.id}
                             onToggle={() => toggleAccordion(location.id)}
                         />

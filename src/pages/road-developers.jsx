@@ -2,6 +2,7 @@ import ConsultationForm from '@/components/common/ConsultationWithState'
 import ContentImg from '@/components/common/ContentImg'
 import HeroSection from '@/components/common/HeroSection'
 import WhyChooseUs from '@/components/common/WhyChooseUs'
+import Clients from '@/components/home/Clients'
 import FAQSection from '@/components/services/FAQSection'
 import LocationSection from '@/components/services/LocationSection'
 import ProductsSection from '@/components/services/ProductsSection'
@@ -87,6 +88,7 @@ const Page = () => {
                     img="/assets/services/roaddevelopers/roaddevelopers2.webp"
                     reverse={true}
                 />
+                <Clients />
                 <LocationSection page='road-developers' />
                 <FAQSection
                     items={ROAD_DEVELOPERS_FAQS}
