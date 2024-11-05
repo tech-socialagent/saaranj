@@ -7,7 +7,7 @@ import Countdown from "@/components/Countdown";
 import "@/styles/globals.css";
 
 // Set your launch date here YYYY-MM-DDTHH:mm:ss
-const LAUNCH_DATE = '2024-11-11T11:00:00'; 
+const LAUNCH_DATE = '2024-10-11T11:11:00'; 
 
 export default function App({ Component, pageProps }) {
   const [isLaunched, setIsLaunched] = useState(false);
