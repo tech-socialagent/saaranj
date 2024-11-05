@@ -12,16 +12,16 @@ const ContentImg = ({ title, desc, img, box, reverse }) => {
                 </div>
 
                 <div className=" flex-1  flex justify-center items-center w-full">
-                    <div className="relative lg:min-w-4/5 lg:h-[450px] h-[229px] w-full overflow-hidden">
+                    <div className="relative lg:min-w-4/5 lg:h-[450px] h-[229px] w-full ">
                         <Image
                             src={img}
                             alt="About Saaranj Ventures"
-                            width={397}
-                            height={311}
+                            width={1000}
+                            height={1000}
                             className="h-full w-full object-cover relative z-10 "
                         />
                         {
-                            box && <div className="border-2 absolute z-5 top-[20px] left-[10px] border-primary h-full w-full"></div>
+                            box && <div className="border-2 absolute z-5 top-[20px] left-[-20px] border-primary h-full w-full"></div>
                         }
                     </div>
 

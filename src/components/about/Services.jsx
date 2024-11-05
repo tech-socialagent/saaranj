@@ -2,19 +2,19 @@ import Image from 'next/image';
 
 const services = [
   {
-    image: '/assets/about/residential.png',
+    image: '/assets/about/residential.webp',
     heading: 'Residential Construction',
   },
   {
-    image: '/assets/about/commercial.png',
+    image: '/assets/about/commercial.webp',
     heading: 'Commercial Construction',
   },
   {
-    image: '/assets/about/interiors.png',
+    image: '/assets/about/interiors.webp',
     heading: 'Interiors & Modular Works',
   },
   {
-    image: '/assets/about/material.png',
+    image: '/assets/about/material.webp',
     heading: 'Material Supply',
   },
 ];

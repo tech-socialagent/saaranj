@@ -9,7 +9,7 @@ const AccordionItem = ({ trigger, content, isOpen, onToggle }) => (
             onClick={onToggle}
             className="w-full flex items-center justify-between p-4 text-left hover:bg-[#1E303F] transition-colors duration-300"
         >
-            <span className="text-primary lg:text-3xl sm:text-xl font-medium pr-8">
+            <span className="text-primary lg:text-2xl text-[1.3rem]  font-medium pr-8">
                 {trigger}
             </span>
             <FaChevronDown

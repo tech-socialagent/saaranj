@@ -59,12 +59,12 @@ const careers = () => {
             <>
                 <HeroSection
                     img="/assets/banners/careershero.webp"
-                    title="SRJ Ready Mix Concrete"
+                    title="Careers"
                 />
                 <ContentImg
                     title="Work With Us"
                     desc={<>Join Saaranj and be part of a team that is shaping the future of construction. We value innovation, quality, and excellence, offering a dynamic work environment where growth and creativity thrive. Whether you're an experienced professional or just beginning your career, there are plenty of opportunities to develop your skills and make a difference.</>}
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/careers.webp"
                     box={true}
                 />
 
@@ -94,7 +94,7 @@ const careers = () => {
                 <section className="mt-16 lg:mt-20">
                     <div className="relative w-full h-[324px] rounded-lg overflow-hidden">
                         <Image
-                            src="/assets/images/careers/banner.png"
+                            src="/assets/areyoureadytothrive.webp"
                             alt="Career Banner"
                             fill
                             className="object-cover"

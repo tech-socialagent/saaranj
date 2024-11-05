@@ -8,10 +8,12 @@ import emailjs from '@emailjs/browser';
 
 const ConsultationForm = ({ title }) => {
     const [formData, setFormData] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         phone: '',
-        location: '',
         email: '',
+        message: '',
+        location: '',
         requirement: ''
     });
 
@@ -25,21 +27,22 @@ const ConsultationForm = ({ title }) => {
         setStatus({ loading: true, message: '' });
 
         try {
-            // Replace these with your actual EmailJS credentials
             const templateParams = {
-                from_name: formData.name,
+                from_name: title === "Contact Us"
+                    ? `${formData.firstName} ${formData.lastName}`
+                    : formData.name,
                 from_email: formData.email,
                 phone_number: formData.phone,
                 location: formData.location,
-                message: formData.requirement,
-                to_name: 'Saaranj Team', // Recipient name
+                message: title === "Contact Us" ? formData.message : formData.requirement,
+                to_name: 'Saaranj Team',
             };
 
             await emailjs.send(
-                'service_2r9s74v', // Replace with your EmailJS service ID
-                'template_anhuoi4', // Replace with your EmailJS template ID
+                'service_2r9s74v',
+                'template_anhuoi4',
                 templateParams,
-                '8dv5PZSdRqSJ8FGUZ' // Replace with your EmailJS public key
+                '8dv5PZSdRqSJ8FGUZ'
             );
 
             setStatus({
@@ -47,16 +50,16 @@ const ConsultationForm = ({ title }) => {
                 message: 'Message sent successfully!'
             });
 
-            // Clear form after successful submission
             setFormData({
-                name: '',
+                firstName: '',
+                lastName: '',
                 phone: '',
-                location: '',
                 email: '',
+                message: '',
+                location: '',
                 requirement: ''
             });
 
-            // Clear success message after 3 seconds
             setTimeout(() => {
                 setStatus({ loading: false, message: '' });
             }, 3000);
@@ -78,16 +81,42 @@ const ConsultationForm = ({ title }) => {
         }));
     };
 
+    const isContactForm = title === "Contact Us";
+
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left Image Section */}
-            <div className="hidden lg:block relative">
+            {/* Left Image Section with Overlay Text - Removed 'hidden lg:block' */}
+            <div className="relative h-[400px] lg:h-auto">
                 <Image
                     src="/assets/contact.png"
                     alt="Construction Plans"
                     fill
                     className="w-full object-cover"
                 />
+                {isContactForm && (
+                    <div className="absolute inset-0 bg-[#192738]/80 p-8 lg:p-16 text-white space-y-8 flex flex-col justify-center">
+                        <div>
+                            <h1 className="text-3xl lg:text-4xl font-medium mb-4">
+                                Start the Conversation,
+                            </h1>
+                            <h2 className="text-3xl lg:text-4xl font-medium text-primary">
+                                Reach Out to Us.
+                            </h2>
+                        </div>
+                        <div className="space-y-4">
+                            <p className="flex items-center gap-2">
+                                <span className="font-medium">Phone: +91 9071755551</span>
+                            </p>
+                            <p className="flex items-center gap-2">
+                                <span className="font-medium">E-mail: enquiry@saaranj.com</span>
+                            </p>
+                            <p className="flex items-center gap-2">
+                                <span className="font-medium">Address: Head Office - #699, 3rd Floor,
+                                    15th Cross, <br /> J.P Nagar 2nd Phase, Bangalore-560078</span>
+                            </p>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Right Form Section */}
@@ -96,7 +125,6 @@ const ConsultationForm = ({ title }) => {
                     {title || "Get a free Consultation"}
                 </h1>
 
-                {/* Status Message */}
                 {status.message && (
                     <div className={`mb-4 p-3 rounded ${status.message.includes('success')
                         ? 'bg-green-500/10 text-green-500'
@@ -108,81 +136,114 @@ const ConsultationForm = ({ title }) => {
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Name Field */}
-                        <div className="flex flex-col gap-2">
-                            <label className="text-white">Name</label>
-                            <input
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
-                                placeholder="Your Name"
-                                required
-                            />
-                        </div>
+                        {isContactForm ? (
+                            <>
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-white">First Name</label>
+                                    <input
+                                        type="text"
+                                        name="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleChange}
+                                        className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
+                                        placeholder="Enter your first name"
+                                        required
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-white">Last Name</label>
+                                    <input
+                                        type="text"
+                                        name="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleChange}
+                                        className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
+                                        placeholder="Enter your last name"
+                                        required
+                                    />
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-white">Name</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
+                                        placeholder="Your Name"
+                                        required
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-white">Location</label>
+                                    <input
+                                        type="text"
+                                        name="location"
+                                        value={formData.location}
+                                        onChange={handleChange}
+                                        className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
+                                        placeholder="Your Location"
+                                        required
+                                    />
+                                </div>
+                            </>
+                        )}
 
-                        {/* Phone Field */}
                         <div className="flex flex-col gap-2">
-                            <label className="text-white">Phone</label>
-                            <input
-                                type="tel"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
-                                placeholder="Your Phone Number"
-                                required
-                            />
-                        </div>
-
-                        {/* Location Field */}
-                        <div className="flex flex-col gap-2">
-                            <label className="text-white">Location</label>
-                            <input
-                                type="text"
-                                name="location"
-                                value={formData.location}
-                                onChange={handleChange}
-                                className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
-                                placeholder="Your Location"
-                                required
-                            />
-                        </div>
-
-                        {/* Email Field */}
-                        <div className="flex flex-col gap-2">
-                            <label className="text-white">Email</label>
+                            <label className="text-white">E-mail</label>
                             <input
                                 type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
-                                placeholder="Your Email"
+                                placeholder="Enter your e-mail id"
+                                required
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <label className="text-white">Phone Number</label>
+                            <input
+                                type="tel"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none"
+                                placeholder="Enter your phone number"
                                 required
                             />
                         </div>
                     </div>
 
-                    {/* Construction Requirement Field */}
                     <div className="flex flex-col gap-2">
-                        <label className="text-white">Construction Requirement</label>
+                        <label className="text-white">
+                            {isContactForm ? 'Message' : 'Construction Requirement'}
+                        </label>
                         <textarea
-                            name="requirement"
-                            value={formData.requirement}
+                            name={isContactForm ? 'message' : 'requirement'}
+                            value={isContactForm ? formData.message : formData.requirement}
                             onChange={handleChange}
                             className="bg-transparent border-b border-primary text-gray-300 py-2 focus:outline-none resize-none"
-                            placeholder="Describe your construction requirement"
+                            placeholder={isContactForm ? 'Enter your message' : 'Describe your construction requirement'}
                             rows="3"
                             required
                         />
                     </div>
 
-                    {/* Submit Button */}
-                    <CustomButton href="/contact" normalBtn={true} disabled={status.loading}>
-                        {status.loading ? 'Sending...' : (title ? 'Submit' : 'Contact Us')}
-                    </CustomButton>
+                    <div className="flex justify-start">
+                        <button
+                            type="submit"
+                            disabled={status.loading}
+                            className="border border-primary text-primary px-8 py-2 flex items-center gap-2 hover:bg-primary hover:text-white transition-all duration-300"
+                        >
+                            {status.loading ? 'Sending...' : 'Submit'}
+                            {!status.loading && <FaArrowRight />}
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>

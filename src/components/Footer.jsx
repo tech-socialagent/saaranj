@@ -84,7 +84,7 @@ const Footer = () => {
                         <h2 className="text-primary text-[20px] font-futura">
                             Quick Links
                         </h2>
-                        <ul className="flex flex-col text-white font-secondaryText lg:mt-5 mt-2 space-y-2">
+                        <ul className="flex flex-col text-white font-secondaryText lg:mt-5 mt-2 space-y-2 list-none pl-0">
                             {quickLinks.map((item, index) => (
                                 <li key={index}>
                                     <Link
@@ -103,7 +103,7 @@ const Footer = () => {
                         <h2 className="text-[20px] text-primary font-futura">
                             Saaranj Prime Homes
                         </h2>
-                        <ul className="flex flex-col lg:mt-5 mt-2 space-y-2 font-lato text-white">
+                        <ul className="flex flex-col lg:mt-5 mt-2 space-y-2 font-lato text-white list-none pl-0">
                             {homePackages.map((item, index) => (
                                 <li key={index}>
                                     <Link

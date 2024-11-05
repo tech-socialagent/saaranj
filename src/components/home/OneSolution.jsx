@@ -35,7 +35,7 @@ const testimonials = [
 const OneSolution = () => {
     return (
         <section className="bg-secondary py-12 lg:py-16 px-4 lg:px-12">
-            <div className=" mx-auto">
+            <div className="mx-auto">
                 <div>
                     <h1 className="heading">
                         One Stop Solution
@@ -48,12 +48,20 @@ const OneSolution = () => {
                 </div>
 
                 {/* Desktop View */}
-                <div className="mt-[55px] lg:mt-14 hidden lg:block ">
-                    <Carousel className="w-full ">
-                        <CarouselContent className="ml-0 bg mt-8   pl-4">
+                <div className="mt-[55px] lg:mt-14 hidden lg:block">
+                    <Carousel
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent className="-ml-2 lg:-ml-4">
                             {testimonials.map((item, index) => (
-                                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                                    <TestimonialCard {...item} />
+                                <CarouselItem key={index} className="pl-2 lg:pl-4 lg:basis-1/3 pt-10">
+                                    <div className="pl-8"> {/* Added padding for icon space */}
+                                        <TestimonialCard {...item} />
+                                    </div>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
@@ -65,9 +73,11 @@ const OneSolution = () => {
                 </div>
 
                 {/* Mobile View */}
-                <div className="lg:hidden flex flex-col gap-6 mt-8 ml-4 " style={{width: 'calc(100% - 2rem)'}}>
+                <div className="lg:hidden flex flex-col gap-6 mt-8">
                     {testimonials.map((item, index) => (
-                        <TestimonialCard key={index} {...item} />
+                        <div key={index} className="pl-8 pt-10"> {/* Added padding for icon */}
+                            <TestimonialCard {...item} />
+                        </div>
                     ))}
                 </div>
             </div>
@@ -76,25 +86,30 @@ const OneSolution = () => {
 };
 
 const TestimonialCard = ({ icon, heading, description }) => (
-    <div className="relative ">
-                <div className="lg:h-[155px] text-left lg:w-[90%] w-full border-2 pb-5 border-primary pl-20 lg:pr-2 shadow-xl pt-2">
-                    <h1 className="lg:text-xl text-xl text-white font-semibold">
-                        {heading}
-                    </h1>
-                    <p className="font-lato text-gray-300 mt-2 text-[13px] lg:text-[15px]">
-                        {description}
-                    </p>
-                </div>
-                <div className="w-20 h-20 rounded-full p-3 border-2 absolute -top-7 border-primary -left-6  bg-secondary flex items-center justify-center overflow-hidden">
-                    <Image
-                        src={icon}
-                        alt={heading}
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-contain"
-                    />
-                </div>
+    <div className="relative">
+        {/* Card Content */}
+        <div className="text-left w-full border-2 pb-5 border-primary pl-20 pr-4 shadow-xl pt-4 min-h-[155px]">
+            <h1 className="lg:text-xl text-xl text-white font-semibold">
+                {heading}
+            </h1>
+            <p className="font-lato text-gray-300 mt-2 text-[13px] lg:text-[15px]">
+                {description}
+            </p>
+        </div>
+        
+        {/* Icon Container */}
+        <div className="w-[84px] h-[84px] rounded-full absolute -top-8 -left-8 bg-secondary">
+            <div className="w-full h-full rounded-full border-2 border-primary p-3 flex items-center justify-center overflow-hidden">
+                <Image
+                    src={icon}
+                    alt={heading}
+                    width={50}
+                    height={50}
+                    className="w-[50px] h-[50px] object-contain"
+                />
             </div>
-            );
+        </div>
+    </div>
+);
 
-            export default OneSolution;
+export default OneSolution;

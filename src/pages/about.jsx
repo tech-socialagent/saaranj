@@ -33,7 +33,7 @@ const about = () => {
               interior design to sturdy concrete foundations. Our dedication to excellence in 
               quality, timely delivery, and outstanding value allows us to create not only 
               structures but also lasting relationships."
-                    img="/assets/about/who-we-are.png"
+                    img="/assets/about/who-we-are.webp"
                     box={true}
                 />
                 <VisionMission />

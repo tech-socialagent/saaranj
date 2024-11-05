@@ -30,7 +30,7 @@ const DirectorMessage = () => {
             and integrity.
           </p>
           <div className="mt-4">
-            <h2 className="heading">Mr. R</h2>
+            <h2 className="font-funt text-primary text-3xl">Mr. R</h2>
             <p className="test__para text-xl text-white mt-1">Saaranj Ventures</p>
           </div>
         </div>

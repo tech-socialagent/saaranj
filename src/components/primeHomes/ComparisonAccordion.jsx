@@ -25,7 +25,7 @@ const ComparisonAccordion = ({ data, openIndex: parentOpenIndex, onToggle: paren
                         onClick={() => handleToggle(index)}
                         className="w-full py-4 px-6 flex justify-between items-center bg-[#192738] text-white hover:bg-[#192738]/90 transition-all"
                     >
-                        <span className="text-lg font-semibold">{item.heading}</span>
+                        <span className="text-lg font-semibold text-left">{item.heading}</span>
                         <FaChevronDown 
                             className={`
                                 w-5 h-5 transition-transform duration-300

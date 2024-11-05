@@ -66,7 +66,7 @@ const Page = () => {
                     desc="Road Maintenance Keeping roads safe and functional is vital."
                     PRODUCTS={[
                         {
-                            image: '/assets/services/roaddevelopers/roadcrack.jfif',
+                            image: '/assets/services/roaddevelopers/resurfacing-patching.webp',
                             heading: "Resurfacing and patching",
                         },
                         {

@@ -104,7 +104,7 @@ const Navbar = () => {
           `}
                 >
                     <nav className="flex flex-col pl-4 pt-6 mt-16 mx-0 bg-secondary h-[100vh] pb-4">
-                        <ul className="flex flex-col gap-6 w-full">
+                        <ul className="flex flex-col gap-6 w-full list-none">
                             {mainNavLinks.map((link) => (
                                 <li key={link.path}>
                                     <NavLink {...link} />
@@ -124,7 +124,7 @@ const Navbar = () => {
                                 <ul
                                     className={`
                     flex flex-col gap-4 mt-4 ml-7
-                    overflow-hidden transition-all duration-300 ease-in-out
+                    overflow-hidden transition-all duration-300 ease-in-out  list-none pl-0
                     ${isServicesOpen
                                             ? 'max-h-[400px] opacity-100'
                                             : 'max-h-0 opacity-0'}
