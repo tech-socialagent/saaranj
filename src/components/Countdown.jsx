@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const Countdown = ({ launchDate }) => {
     const [timeLeft, setTimeLeft] = useState({
@@ -45,48 +46,56 @@ const Countdown = ({ launchDate }) => {
     );
 
     return (
-        <div className="min-h-screen bg-[#031831] flex flex-col items-center justify-center p-4">
-            {/* Logo */}
-            <div className="mb-12">
-                <Image
-                    src="/assets/logo.png"
-                    alt="Logo"
-                    width={200}
-                    height={60}
-                    priority
-                    className="object-contain"
-                />
-            </div>
+        <>
+            <Head>
+                <title>Saaranj Ventures</title>
+                <meta name="description" content="Saaranj Ventures" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.svg" />
+            </Head>
+            <div className="min-h-screen bg-[#031831] flex flex-col items-center justify-center p-4">
+                {/* Logo */}
+                <div className="mb-12">
+                    <Image
+                        src="/assets/logo.png"
+                        alt="Logo"
+                        width={200}
+                        height={60}
+                        priority
+                        className="object-contain"
+                    />
+                </div>
 
-            {/* Coming Soon Text */}
-            <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-medium mb-8 text-center">
-                Coming Soon
-            </h1>
-            
-            {/* Countdown Timer */}
-            <div className="grid grid-cols-2 md:flex gap-4 md:gap-8 mb-12">
-                <TimeUnit value={timeLeft.days} label="Days" />
-                <TimeUnit value={timeLeft.hours} label="Hours" />
-                <TimeUnit value={timeLeft.minutes} label="Minutes" />
-                <TimeUnit value={timeLeft.seconds} label="Seconds" />
-            </div>
+                {/* Coming Soon Text */}
+                <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-medium mb-8 text-center">
+                    Coming Soon
+                </h1>
 
-            {/* Description */}
-            <p className="text-white text-center max-w-2xl text-lg mb-8">
-                We're working hard to bring you something amazing. Stay tuned for our launch!
-            </p>
+                {/* Countdown Timer */}
+                <div className="grid grid-cols-2 md:flex gap-4 md:gap-8 mb-12">
+                    <TimeUnit value={timeLeft.days} label="Days" />
+                    <TimeUnit value={timeLeft.hours} label="Hours" />
+                    <TimeUnit value={timeLeft.minutes} label="Minutes" />
+                    <TimeUnit value={timeLeft.seconds} label="Seconds" />
+                </div>
 
-    
-            {/* Social Links */}
-            <div className="mt-12 flex gap-6">
-                {/* Add your social icons here */}
-                {/* Example:
+                {/* Description */}
+                <p className="text-white text-center max-w-2xl text-lg mb-8">
+                    We're working hard to bring you something amazing. Stay tuned for our launch!
+                </p>
+
+
+                {/* Social Links */}
+                <div className="mt-12 flex gap-6">
+                    {/* Add your social icons here */}
+                    {/* Example:
                 <a href="https://facebook.com" className="text-primary hover:text-primary/80 transition-colors">
                     <FaFacebook size={24} />
                 </a>
                 */}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
