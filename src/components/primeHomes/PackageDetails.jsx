@@ -1,28 +1,42 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PACKAGES_DATA } from '@/constants/packages';
 import PackageCard from '@/components/primeHomes/PackageCard';
 import PackageAccordion from '@/components/primeHomes/PackageAccordion';
 import { FaChevronDown } from 'react-icons/fa';
+import { useSearchParams } from 'next/navigation';
 
 const PackageDetails = () => {
+    const searchParams = useSearchParams();
     const [selectedPackage, setSelectedPackage] = useState(PACKAGES_DATA[0]);
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [mobileOpen, setMobileOpen] = useState(null);
+
+    // Handle URL query parameter for package selection
+    useEffect(() => {
+        const tabParam = searchParams.get('tab');
+        if (tabParam !== null) {
+            const index = parseInt(tabParam);
+            if (index >= 0 && index < PACKAGES_DATA.length) {
+                setSelectedIndex(index);
+                setSelectedPackage(PACKAGES_DATA[index]);
+                setMobileOpen(index); // Also open the mobile accordion
+            }
+        }
+    }, [searchParams]);
 
     const handlePackageSelect = (index) => {
         setSelectedIndex(index);
         setSelectedPackage(PACKAGES_DATA[index]);
     };
 
-    // Mobile view specific state
-    const [mobileOpen, setMobileOpen] = useState(null);
     const handleMobileToggle = (index) => {
         setMobileOpen(mobileOpen === index ? null : index);
     };
 
     return (
-        <section className="px-4 md:px-6 lg:px-12 mt-5 lg:mt-[90px]">
+        <section className="px-4 md:px-6 lg:px-12 mt-5 lg:mt-[90px]" id='package'>
             {/* Heading */}
             <h1 className="mx-auto heading leading-9 max-w-[1000px] mb-8 lg:mb-12 text-center">
                 Get detailed insights into the raw materials required for your home construction.

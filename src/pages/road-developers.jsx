@@ -25,9 +25,15 @@ const Page = () => {
                 />
                 <ContentImg
                     title="Road Developers"
-                    desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
-                        <br />  <br />
-                        Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
+                    desc={<>At Saaranj Ventures, we are dedicated to building and maintaining the roads that connect communities and drive progress. With years of experience in road development and construction, we pride ourselves on our commitment to quality, safety, and innovation. Whether you're looking to construct a new roadway or maintain existing infrastructure, we have the expertise to deliver exceptional results.
+                        <br /><br />
+                        Road Construction We specialize in the construction of new roadways, ensuring durability and longevity through high-quality materials and advanced construction techniques. Our services include:
+                        <ul>
+                            <li>Earthwork and grading</li>
+                            <li>  Asphalt and concrete paving</li>
+                            <li> Drainage systems installation</li>
+                        </ul>
+                    </>}
                     img="/assets/services/roaddevelopers/roaddevelopers.webp"
                 />
                 <WhyChooseUs

@@ -6,9 +6,9 @@ const ContentImg = ({ title, desc, img, box, reverse }) => {
             <div className={`flex lg:flex-row flex-col justify-between items-center lg:gap-4 gap-8 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
                 <div className="lg:w-3/5 w-full">
                     <h1 className="heading">{title}</h1>
-                    <p className="text-lg max-w-[800px] text-white mt-5">
+                    <div className="text-lg max-w-[800px] text-white mt-5"  >
                         {desc}
-                    </p>
+                    </div>
                 </div>
 
                 <div className=" flex-1  flex justify-center items-center w-full">

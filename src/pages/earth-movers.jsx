@@ -25,9 +25,7 @@ const Page = () => {
                 />
                 <ContentImg
                     title="Earth Movers"
-                    desc={<>As industry pioneers since 23 years, we're revolutionizing the aggregates sector. Offering a comprehensive solution that encompasses every stage of the supply chain, from sourcing and mining to processing, transportation, and delivery, we cater to all your aggregate needs.
-                        <br />  <br />
-                        Our strategic presence across the industry guarantees superior quality aggregates, unparalleled customer service, and competitive pricing. With a commitment to innovation and sustainability, we're transforming the way aggregates are sourced, produced, and delivered."</>}
+                    desc={<>At Saaranj Ventures, we specialize in providing top-tier earthmoving services for a variety of construction projects. With our state-of-the-art machinery and skilled operators, we ensure that your project is completed efficiently and safely. Whether you need excavation, grading, or land clearing, we are here to help.</>}
                     img="/assets/services/earth-movers/grading.webp"
                 />
                 <WhyChooseUs

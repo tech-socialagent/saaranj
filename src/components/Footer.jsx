@@ -109,7 +109,8 @@ const Footer = () => {
                                     <Link
                                         href={{
                                             pathname: '/prime-homes',
-                                            query: { tab: item.id }
+                                            hash: 'package',
+                                            query: { tab: item.id },
                                         }}
                                         className="lg:text-[20px] duration-150 ease-in-out hover:text-primary"
                                     >

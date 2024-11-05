@@ -81,3 +81,10 @@ body {
   background-color: var(--primary-color);
   border-radius: 20px;
 }
+
+/* list */
+ul{
+  list-style-type: disc;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
