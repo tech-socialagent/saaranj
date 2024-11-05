@@ -25,7 +25,7 @@ const getLocations = (page) => {
                     },
                     {
                         title: 'Unit-3',
-                        address: 'SY. NO. 781/1, BODICHIPALLI VILLAGE, IRUDALAM POST, DENKANIKOTTAI TALUK, KRISHNAGIRI DISTRICT, TAMILNADU-635113'
+                        address: 'Sy. No. 781/1, Bodichipalli Village, Irudalam Post, Denkanikottai Taluk, Krishnagiri District, Tamilnadu-635113'
                     }
                 ]
             }
