@@ -1,5 +1,6 @@
 import ContentImg from '@/components/common/ContentImg'
 import HeroSection from '@/components/common/HeroSection'
+import { generateMetaTags } from '@/constants/metadata';
 import Head from 'next/head'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -51,10 +52,7 @@ const careers = () => {
     return (
         <>
             <Head>
-                <title>SRJ Ready Mix Concrete</title>
-                <meta name="description" content="Saaranj Ventures" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.svg" />
+                {generateMetaTags('careers')}
             </Head>
             <>
                 <HeroSection

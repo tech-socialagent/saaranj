@@ -7,6 +7,7 @@ import FAQSection from '@/components/services/FAQSection'
 import LocationSection from '@/components/services/LocationSection'
 import ProductsSection from '@/components/services/ProductsSection'
 import { READY_MIX_FAQS } from '@/constants/faqs'
+import { generateMetaTags } from '@/constants/metadata'
 import Head from 'next/head'
 import React from 'react'
 
@@ -14,10 +15,7 @@ const Page = () => {
     return (
         <>
             <Head>
-                <title>SRJ Ready Mix Concrete</title>
-                <meta name="description" content="Saaranj Ventures" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.svg" />
+                {generateMetaTags('readyMix')}
             </Head>
             <>
                 <HeroSection

@@ -8,7 +8,7 @@ const Hero = () => {
             {/* Desktop view image */}
             <div className="hidden lg:block md:block">
                 <Image
-                    src="/assets/home/hero.png"
+                    src="/assets/home/hero.webp"
                     alt="Full width display desktop"
                     width={1920}
                     height={1080}
@@ -21,7 +21,7 @@ const Hero = () => {
             {/* Mobile view image */}
             <div className="block lg:hidden md:hidden relative">
                 <Image
-                    src="/assets/home/hero_mobile.png"
+                    src="/assets/home/hero_mobile.webp"
                     alt="Full width display mobile"
                     width={768}
                     height={1024}

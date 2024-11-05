@@ -7,17 +7,15 @@ import Introduction from "@/components/home/Introduction";
 import OneSolution from "@/components/home/OneSolution";
 import Process from "@/components/home/Process";
 import Services from "@/components/home/Services";
-import Head from "next/head";
+import Head from 'next/head';
+import { generateMetaTags } from '@/constants/metadata';
 
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Saaranj Ventures</title>
-        <meta name="description" content="Saaranj Ventures" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
+        {generateMetaTags('home')}
       </Head>
       <>
         <Hero />
@@ -26,7 +24,7 @@ export default function Home() {
         <OneSolution />
         <Process />
         <Brands />
-        <Clients /> 
+        <Clients />
         <CustomerReviews />
         <ConsultationForm />
       </>

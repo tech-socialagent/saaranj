@@ -4,6 +4,7 @@ import VisionMission from '@/components/about/VisionMission'
 import ConsultationForm from '@/components/common/ConsultationWithState'
 import ContentImg from '@/components/common/ContentImg'
 import HeroSection from '@/components/common/HeroSection'
+import { generateMetaTags } from '@/constants/metadata'
 import Head from 'next/head'
 import React from 'react'
 
@@ -11,10 +12,7 @@ const about = () => {
     return (
         <>
             <Head>
-                <title>About - Saaranj Ventures</title>
-                <meta name="description" content="Saaranj Ventures" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.svg" />
+                {generateMetaTags('about')}
             </Head>
             <>
                 <HeroSection

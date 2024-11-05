@@ -3,7 +3,7 @@ export const SERVICES = [
       image: '/assets/services/prime-homes.jpeg',
       heading: 'Saaranj Prime Homes',
       desc: 'Saaranj Prime Homes provides all-in-one construction packages, including design, construction, interiors, MEP systems, government liaison, finishing, etc.',
-      link: '/packages',
+      link: '/prime-homes',
     },
     {
       image: '/assets/services/ready-mix.png',
