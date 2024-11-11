@@ -20,7 +20,7 @@ const Page = () => {
             <>
                 <HeroSection
                     img="/assets/banners/srjconcretehero.webp"
-                    title="SRJ Ready Mix Concrete"
+                    title="Ready Mix Concrete"
                 />
                 <ContentImg
                     title="SRJ Ready Mix Concrete"
