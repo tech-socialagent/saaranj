@@ -20,7 +20,7 @@ const Page = () => {
             <>
                 <HeroSection
                     img="/assets/banners/srjsolidblockhero.webp"
-                    title="SRJ Solid Block"
+                    title="Solid Block"
                 />
                 <ContentImg
                     title="SRJ Solid Block"
