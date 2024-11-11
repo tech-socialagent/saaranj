@@ -17,7 +17,7 @@ const serviceNavLinks = [
     { path: '/aggregates-sand', display: 'Aggregates & Sand' },
     { path: '/road-developers', display: 'Road Developers' },
     { path: '/earth-movers', display: 'Earth Movers' },
-    { path: '/solid-block', display: 'Blocks' },
+    { path: '/solid-block', display: 'Solid Blocks' },
 ];
 
 const Navbar = () => {
