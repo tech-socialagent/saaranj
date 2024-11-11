@@ -13,11 +13,11 @@ const mainNavLinks = [
 ];
 
 const serviceNavLinks = [
-    { path: '/ready-mix-concrete', display: 'SRJ Concrete' },
+    { path: '/ready-mix-concrete', display: 'Ready Mix Concrete' },
     { path: '/aggregates-sand', display: 'Aggregates & Sand' },
     { path: '/road-developers', display: 'Road Developers' },
     { path: '/earth-movers', display: 'Earth Movers' },
-    { path: '/solid-block', display: 'SRJ Blocks' },
+    { path: '/solid-block', display: 'Blocks' },
 ];
 
 const Navbar = () => {
