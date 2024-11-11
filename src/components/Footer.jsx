@@ -35,6 +35,8 @@ const quickLinks = [
     { path: "/ready-mix-concrete", display: "Ready Mix Concrete" },
     { path: "/aggregates-sand", display: "Aggregates & Sand" },
     { path: "/solid-block", display: "Solid Block" },
+  { path: "/earth-movers", display: "Earth Movers" },
+  { path: "/road-developers", display: "Road Developers" },
     { path: "/contact", display: "Contact Us" },
     { path: "/careers", display: "Careers" },
 ];
