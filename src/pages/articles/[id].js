@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaShare } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ShareButton = ({ platform, url, title }) => {
     const shareUrls = {
@@ -48,12 +49,11 @@ export default function Article({ article, error }) {
                     <div className="text-red-600 text-lg mb-4">
                         {error || 'Article not found'}
                     </div>
-                    <button
-                        onClick={() => router.push('/articles')}
+                    <Link href='/articles'
                         className="text-blue-600 hover:text-blue-800 font-medium"
                     >
                         ← Back to Articles
-                    </button>
+                    </Link>
                 </div>
             </div>
         );
