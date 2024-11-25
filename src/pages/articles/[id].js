@@ -76,7 +76,7 @@ export default function Article({ article, error }) {
         day: 'numeric',
     });
 
-    const fullUrl = `https://saaranj.com/articles/${router.query.id}`;
+    const fullUrl = `https://www.saaranj.com/articles/${router.query.id}`;
 
     const metaTitle = field_meta_title || title;
     const metaDescription = field_meta_description 
