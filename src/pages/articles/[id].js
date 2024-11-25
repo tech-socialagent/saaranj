@@ -76,13 +76,10 @@ export default function Article({ article, error }) {
         day: 'numeric',
     });
 
-    const fullUrl = typeof window !== 'undefined'
-        ? window.location.href
-        : `https://saaranj.com/articles/${router.query.id}`;
+    const fullUrl = `https://saaranj.com/articles/${router.query.id}`;
 
     const metaTitle = field_meta_title || title;
-    const metaDescription = field_meta_description ||
-        (body?.value ? body.value.substring(0, 160).replace(/<[^>]*>/g, '') : '');
+    const metaDescription = field_meta_description 
 
     return (
         <>
@@ -132,7 +129,7 @@ export default function Article({ article, error }) {
                             </div>
                         )}
 
-                        <div className="p-8">
+                        <div className="p-8 px-3 md:p-8 ">
                             <h1 className="text-4xl font-bold text-primary mb-4">{title}</h1>
 
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
