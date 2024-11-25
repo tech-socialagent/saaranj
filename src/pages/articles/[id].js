@@ -213,7 +213,7 @@ export async function getServerSideProps({ params, req }) {
         return {
             props: {
                 article: null,
-                error: 'Failed to load article'
+                error: `Failed to load article ${error}`
             }
         };
     }
