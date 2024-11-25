@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
   });
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-[#192738] rounded-lg shadow-md overflow-hidden">
       {imageUrl && (
         <div className="relative h-48 w-full">
           <img
@@ -26,13 +26,13 @@ const ArticleCard = ({ article }) => {
         </div>
       )}
       <div className="p-6">
-        <p className="text-sm text-gray-500 mb-2">{formattedDate}</p>
+        <p className="text-sm text-white mb-2">{formattedDate}</p>
         <Link href={`/article/${id}`}>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2 hover:text-blue-600">
+          <h2 className="text-xl font-semibold text-white mb-2 ">
             {title}
           </h2>
         </Link>
-        <p className="text-gray-600 mb-4">{field_meta_description}</p>
+        <p className="text-white mb-4">{field_meta_description}</p>
         <Link
           href={`/articles/${field_slug}`}
           className="text-primary font-medium"

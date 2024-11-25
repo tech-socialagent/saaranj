@@ -18,7 +18,7 @@ const ShareButton = ({ platform, url, title }) => {
     return (
         <button
             onClick={handleShare}
-            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-primary hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200"
         >
             {platform === 'facebook' && <FaFacebookF className="w-4 h-4" />}
             {platform === 'twitter' && <FaTwitter className="w-4 h-4" />}
@@ -102,11 +102,11 @@ export default function Article({ article, error }) {
                 <meta property="article:published_time" content={created} />
             </Head>
 
-            <div className="min-h-screen bg-gray-50">
+            <div className="min-h-screen bg-secondary">
                 <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                     <button
                         onClick={() => router.push('/articles')}
-                        className="mb-8 text-secondary font-medium inline-flex items-center"
+                        className="mb-8 text-primary font-medium inline-flex items-center"
                     >
                         <svg
                             className="w-4 h-4 mr-2"
@@ -122,7 +122,7 @@ export default function Article({ article, error }) {
                         Back to Articles
                     </button>
 
-                    <article className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <article className="bg-[#192738] rounded-lg shadow-lg overflow-hidden">
                         {imageUrl && (
                             <div className="relative w-full h-96">
                                 <img
@@ -134,10 +134,10 @@ export default function Article({ article, error }) {
                         )}
 
                         <div className="p-8">
-                            <h1 className="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
+                            <h1 className="text-4xl font-bold text-primary mb-4">{title}</h1>
 
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
-                                <p className="text-gray-500 flex items-center">
+                                <p className="text-white flex items-center">
                                     <svg
                                         className="w-4 h-4 mr-2"
                                         fill="none"
@@ -159,7 +159,7 @@ export default function Article({ article, error }) {
                                     {navigator.share && (
                                         <button
                                             onClick={() => navigator.share({ url: fullUrl, title })}
-                                            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200"
+                                            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-primary hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200"
                                         >
                                             <FaShare className="w-4 h-4" />
                                         </button>
@@ -168,7 +168,7 @@ export default function Article({ article, error }) {
                             </div>
 
                             <div
-                                className="prose prose-lg max-w-none prose-img:rounded-lg prose-img:my-8 prose-a:text-blue-600 hover:prose-a:text-blue-800"
+                                className="prose prose-lg max-w-none text-white prose-img:rounded-lg prose-img:my-8 prose-a:text-blue-600 hover:prose-a:text-blue-800"
                                 dangerouslySetInnerHTML={{
                                     __html: body?.processed || body?.value || 'No content available'
                                 }}
