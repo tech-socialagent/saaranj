@@ -104,8 +104,7 @@ export default function Article({ article, error }) {
 
             <div className="min-h-screen bg-secondary">
                 <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                    <button
-                        onClick={() => router.push('/articles')}
+                    <Link href='/articles'
                         className="mb-8 text-primary font-medium inline-flex items-center"
                     >
                         <svg
@@ -118,9 +117,9 @@ export default function Article({ article, error }) {
                             stroke="currentColor"
                         >
                             <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                        Back to Articles
-                    </button>
+                        </svg> 
+                        Back to Articles 
+                    </Link>
 
                     <article className="bg-[#192738] rounded-lg shadow-lg overflow-hidden">
                         {imageUrl && (
