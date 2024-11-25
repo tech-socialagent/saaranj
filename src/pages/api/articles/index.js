@@ -1,7 +1,12 @@
+// pages/api/articles.js
 export default async function handler(req, res) {
   try {
-    // Fetch articles with included relationships
     const response = await fetch('https://admin.saaranj.com/jsonapi/node/articles?include=field_images');
+    
+    if (!response.ok) {
+      throw new Error(`API responded with status: ${response.status}`);
+    }
+    
     const data = await response.json();
     
     // Process the data to combine included images with articles
@@ -18,6 +23,9 @@ export default async function handler(req, res) {
       }
       return article;
     });
+
+    // Add cache headers
+    res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
 
     res.status(200).json({
       data: articlesWithImages,

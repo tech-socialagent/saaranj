@@ -35,7 +35,7 @@ const ArticleCard = ({ article }) => {
         <p className="text-gray-600 mb-4">{field_meta_description}</p>
         <Link
           href={`/articles/${field_slug}`}
-          className="text-blue-600 hover:text-blue-800 font-medium"
+          className="text-primary font-medium"
         >
           Read More →
         </Link>
