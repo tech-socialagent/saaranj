@@ -1,9 +1,8 @@
 // pages/articles/[id].js
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Image from 'next/image';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaShare } from 'react-icons/fa';
 import Link from 'next/link';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaShare } from 'react-icons/fa';
 
 const ShareButton = ({ platform, url, title }) => {
     const shareUrls = {
@@ -12,13 +11,15 @@ const ShareButton = ({ platform, url, title }) => {
         linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
     };
 
-    const handleShare = () => {
-        window.open(shareUrls[platform], '_blank');
+    const handleShare = (e) => {
+        e.preventDefault();
+        window.open(shareUrls[platform], '_blank', 'noopener,noreferrer');
     };
 
     return (
         <button
             onClick={handleShare}
+            aria-label={`Share on ${platform}`}
             className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-primary hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200"
         >
             {platform === 'facebook' && <FaFacebookF className="w-4 h-4" />}
@@ -31,6 +32,7 @@ const ShareButton = ({ platform, url, title }) => {
 export default function Article({ article, error }) {
     const router = useRouter();
 
+    // Loading state
     if (router.isFallback) {
         return (
             <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -42,6 +44,7 @@ export default function Article({ article, error }) {
         );
     }
 
+    // Error state
     if (error || !article) {
         return (
             <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -49,9 +52,7 @@ export default function Article({ article, error }) {
                     <div className="text-red-600 text-lg mb-4">
                         {error || 'Article not found'}
                     </div>
-                    <Link href='/articles'
-                        className="text-blue-600 hover:text-blue-800 font-medium"
-                    >
+                    <Link href="/articles" className="text-blue-600 hover:text-blue-800 font-medium">
                         ← Back to Articles
                     </Link>
                 </div>
@@ -67,7 +68,8 @@ export default function Article({ article, error }) {
             field_meta_description,
             field_meta_title
         },
-        imageUrl
+        imageUrl,
+        imageMetadata
     } = article.data;
 
     const formattedDate = new Date(created).toLocaleDateString('en-US', {
@@ -77,9 +79,8 @@ export default function Article({ article, error }) {
     });
 
     const fullUrl = `https://www.saaranj.com/articles/${router.query.id}`;
-
     const metaTitle = field_meta_title || title;
-    const metaDescription = field_meta_description 
+    const metaDescription = field_meta_description || '';
 
     return (
         <>
@@ -101,21 +102,11 @@ export default function Article({ article, error }) {
 
             <div className="min-h-screen bg-secondary">
                 <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                    <Link href='/articles'
-                        className="mb-8 text-primary font-medium inline-flex items-center"
-                    >
-                        <svg
-                            className="w-4 h-4 mr-2"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
+                    <Link href="/articles" className="mb-8 text-primary font-medium inline-flex items-center hover:text-primary/80">
+                        <svg className="w-4 h-4 mr-2" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg> 
-                        Back to Articles 
+                        </svg>
+                        Back to Articles
                     </Link>
 
                     <article className="bg-[#192738] rounded-lg shadow-lg overflow-hidden">
@@ -123,26 +114,19 @@ export default function Article({ article, error }) {
                             <div className="relative w-full h-96">
                                 <img
                                     src={imageUrl}
-                                    alt={title}
+                                    alt={imageMetadata?.alt || title}
                                     className="w-full h-full object-cover"
+                                    loading="eager"
                                 />
                             </div>
                         )}
 
-                        <div className="p-8 px-3 md:p-8 ">
+                        <div className="p-8 px-3 md:p-8">
                             <h1 className="text-4xl font-bold text-primary mb-4">{title}</h1>
 
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
                                 <p className="text-white flex items-center">
-                                    <svg
-                                        className="w-4 h-4 mr-2"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
+                                    <svg className="w-4 h-4 mr-2" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                                         <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
                                     {formattedDate}
@@ -152,9 +136,10 @@ export default function Article({ article, error }) {
                                     <ShareButton platform="facebook" url={fullUrl} title={title} />
                                     <ShareButton platform="twitter" url={fullUrl} title={title} />
                                     <ShareButton platform="linkedin" url={fullUrl} title={title} />
-                                    {navigator.share && (
+                                    {typeof navigator !== 'undefined' && navigator.share && (
                                         <button
                                             onClick={() => navigator.share({ url: fullUrl, title })}
+                                            aria-label="Share article"
                                             className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-primary hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200"
                                         >
                                             <FaShare className="w-4 h-4" />
@@ -183,7 +168,12 @@ export async function getServerSideProps({ params, req }) {
         const host = req.headers.host;
 
         const response = await fetch(
-            `${protocol}://${host}/api/articles/${params.id}`
+            `${protocol}://${host}/api/articles/${params.id}`,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                }
+            }
         );
 
         if (!response.ok) {
@@ -191,12 +181,6 @@ export async function getServerSideProps({ params, req }) {
         }
 
         const article = await response.json();
-
-        // Process content to handle relative URLs
-        if (article.data.attributes?.body?.value) {
-            article.data.attributes.body.value = article.data.attributes.body.value
-                .replace(/src="\//g, 'src="https://admin.saaranj.com/');
-        }
 
         return {
             props: {
@@ -209,8 +193,10 @@ export async function getServerSideProps({ params, req }) {
         return {
             props: {
                 article: null,
-                error: `Failed to load article ${error}`
+                error: 'Failed to load article'
             }
         };
     }
 }
+
+

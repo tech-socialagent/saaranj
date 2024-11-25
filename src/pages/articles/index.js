@@ -52,41 +52,19 @@ export async function getServerSideProps({ req }) {
   try {
     const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
     const host = req.headers.host;
+    const apiUrl = `${protocol}://${host}/api/articles`;
 
-    // Fetch data directly from Drupal instead of going through our API route
-    const response = await fetch(
-      'https://admin.saaranj.com/jsonapi/node/articles?include=field_images',
-      {
-        headers: {
-          'Accept': 'application/json',
-        }
-      }
-    );
+    const response = await fetch(apiUrl);
 
     if (!response.ok) {
       throw new Error(`API responded with status: ${response.status}`);
     }
 
-    const data = await response.json();
-
-    // Process the data
-    const included = data.included ? data.included.reduce((acc, item) => {
-      acc[item.id] = item;
-      return acc;
-    }, {}) : {};
-
-    // Attach image URLs to articles
-    const articlesWithImages = data.data.map(article => {
-      const imageRelationship = article.relationships?.field_images?.data;
-      if (imageRelationship && included[imageRelationship.id]) {
-        article.imageUrl = `https://admin.saaranj.com${included[imageRelationship.id].attributes.uri.url}`;
-      }
-      return article;
-    });
+    const { data: articles } = await response.json();
 
     return {
       props: {
-        articles: articlesWithImages,
+        articles,
         error: null
       },
     };
@@ -100,3 +78,4 @@ export async function getServerSideProps({ req }) {
     };
   }
 }
+
