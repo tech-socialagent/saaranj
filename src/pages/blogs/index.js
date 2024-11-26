@@ -30,7 +30,7 @@ export default function Home({ blogs, error: serverError }) {
 
       <div className="min-h-screen bg-secondary">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-medium text-primary mb-8">Latest blogs</h1>
+          <h1 className="heading mb-8">Latest Blogs</h1>
           {blogs && blogs.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogs.map((article) => (
