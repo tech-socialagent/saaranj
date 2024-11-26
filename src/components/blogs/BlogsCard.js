@@ -15,7 +15,8 @@ const ArticleCard = ({ article }) => {
   });
 
   return (
-    <div className="bg-[#192738] rounded-lg shadow-md overflow-hidden">
+    <Link
+    href={`/blogs/${field_slug}`} className="bg-[#192738] rounded-lg shadow-md overflow-hidden">
       {imageUrl && (
         <div className="relative h-48 w-full">
           <img
@@ -34,13 +35,13 @@ const ArticleCard = ({ article }) => {
         </Link>
         <p className="text-white mb-4">{field_meta_description}</p>
         <Link
-          href={`/articles/${field_slug}`}
+          href={`/blogs/${field_slug}`}
           className="text-primary font-medium"
         >
           Read More →
         </Link>
       </div>
-    </div>
+    </Link>
   );
 };
 

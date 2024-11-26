@@ -38,6 +38,7 @@ const quickLinks = [
   { path: "/earth-movers", display: "Earth Movers" },
   { path: "/road-developers", display: "Road Developers" },
     { path: "/contact", display: "Contact Us" },
+    { path: "/blogs", display: "Blogs" },
     { path: "/careers", display: "Careers" },
 ];
 

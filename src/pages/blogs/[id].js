@@ -1,4 +1,4 @@
-// pages/articles/[id].js
+// pages/blogs/[id].js
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -52,8 +52,8 @@ export default function Article({ article, error }) {
                     <div className="text-red-600 text-lg mb-4">
                         {error || 'Article not found'}
                     </div>
-                    <Link href="/articles" className="text-blue-600 hover:text-blue-800 font-medium">
-                        ← Back to Articles
+                    <Link href="/blogs" className="text-blue-600 hover:text-blue-800 font-medium">
+                        ← Back to blogs
                     </Link>
                 </div>
             </div>
@@ -78,7 +78,7 @@ export default function Article({ article, error }) {
         day: 'numeric',
     });
 
-    const fullUrl = `https://www.saaranj.com/articles/${router.query.id}`;
+    const fullUrl = `https://www.saaranj.com/blogs/${router.query.id}`;
     const metaTitle = field_meta_title || title;
     const metaDescription = field_meta_description || '';
 
@@ -102,11 +102,11 @@ export default function Article({ article, error }) {
 
             <div className="min-h-screen bg-secondary">
                 <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                    <Link href="/articles" className="mb-8 text-primary font-medium inline-flex items-center hover:text-primary/80">
+                    <Link href="/blogs" className="mb-8 text-primary font-medium inline-flex items-center hover:text-primary/80">
                         <svg className="w-4 h-4 mr-2" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
-                        Back to Articles
+                        Back to blogs
                     </Link>
 
                     <article className="bg-[#192738] rounded-lg shadow-lg overflow-hidden">
@@ -168,7 +168,7 @@ export async function getServerSideProps({ params, req }) {
         const host = req.headers.host;
 
         const response = await fetch(
-            `${protocol}://${host}/api/articles/${params.id}`,
+            `${protocol}://${host}/api/blogs/${params.id}`,
             {
                 headers: {
                     'Accept': 'application/json',
