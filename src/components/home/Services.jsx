@@ -61,7 +61,7 @@ const ServiceCard = ({ image, heading, desc, link }) => (
             <div className="p-6 px-4 bg-[#192738]">
                 <h2 className="text-2xl font-semibold text-white mb-3">{heading}</h2>
                 <p className="text-gray-300 text-base mb-6 line-clamp-3">{desc}</p>
-                <CustomButton href={link}>
+                <CustomButton normalBtn={true}>
                     Know more
                 </CustomButton>
             </div>

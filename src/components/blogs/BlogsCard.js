@@ -28,18 +28,15 @@ const ArticleCard = ({ article }) => {
       )}
       <div className="p-6">
         <p className="text-sm text-white mb-2">{formattedDate}</p>
-        <Link href={`/article/${id}`}>
           <h2 className="text-xl font-semibold text-white mb-2 ">
             {title}
           </h2>
-        </Link>
         <p className="text-white mb-4">{field_meta_description}</p>
-        <Link
-          href={`/blogs/${field_slug}`}
+        <div
           className="text-primary font-medium"
         >
           Read More →
-        </Link>
+        </div>
       </div>
     </Link>
   );

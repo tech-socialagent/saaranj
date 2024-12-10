@@ -136,7 +136,7 @@ export default function Article({ article, error }) {
                                     <ShareButton platform="facebook" url={fullUrl} title={title} />
                                     <ShareButton platform="twitter" url={fullUrl} title={title} />
                                     <ShareButton platform="linkedin" url={fullUrl} title={title} />
-                                    {typeof navigator !== 'undefined' && navigator.share && (
+                                    {/* {typeof navigator !== 'undefined' && navigator.share && ( */}
                                         <button
                                             onClick={() => navigator.share({ url: fullUrl, title })}
                                             aria-label="Share article"
@@ -144,7 +144,7 @@ export default function Article({ article, error }) {
                                         >
                                             <FaShare className="w-4 h-4" />
                                         </button>
-                                    )}
+                                    {/* )} */}
                                 </div>
                             </div>
 
