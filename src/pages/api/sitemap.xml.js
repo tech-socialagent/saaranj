@@ -17,7 +17,7 @@ async function getAllArticleSlugs() {
     }
 
     const data = await response.json();
-    return data.data.map(article => article.attributes.path?.alias?.replace('/', '') || `blog/${article.attributes.field_slug}`);
+    return data.data.map(article => article.attributes.field_slug );
   } catch (error) {
     console.error('Error fetching article slugs:', error);
     return [];
