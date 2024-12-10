@@ -8,7 +8,8 @@ async function getAllArticleSlugs() {
       {
         headers: {
           'Accept': 'application/json',
-        }
+        },
+        next: { revalidate: 3600 } // Revalidate every hour
       }
     );
 
@@ -17,7 +18,7 @@ async function getAllArticleSlugs() {
     }
 
     const data = await response.json();
-    return data.data.map(article => article.attributes.field_slug );
+    return data.data.map(article => article.attributes.field_slug);
   } catch (error) {
     console.error('Error fetching article slugs:', error);
     return [];
@@ -92,25 +93,25 @@ function generateSiteMap(articleSlugs) {
 }
 
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
-    try {
-      const articleSlugs = await getAllArticleSlugs();
-      
-      // Set the appropriate headers
-      res.setHeader('Content-Type', 'text/xml');
-      res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate'); // Cache for 24 hours
-
-      // Generate the XML sitemap
-      const sitemap = generateSiteMap(articleSlugs);
-
-      // Send the XML to the browser
-      res.status(200).send(sitemap);
-    } catch (error) {
-      console.error('Error generating sitemap:', error);
-      res.status(500).json({ error: 'Error generating sitemap' });
-    }
-  } else {
+  if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+
+  try {
+    const articleSlugs = await getAllArticleSlugs();
+    
+    // Set headers
+    res.setHeader('Content-Type', 'text/xml');
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=3600'); // Cache for 1 hour
+
+    // Generate and send sitemap
+    const sitemap = generateSiteMap(articleSlugs);
+    return res.status(200).send(sitemap);
+  } catch (error) {
+    console.error('Error generating sitemap:', error);
+    // Return a basic sitemap with static routes on error
+    const sitemap = generateSiteMap([]);
+    return res.status(200).send(sitemap);
   }
 }
